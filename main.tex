@@ -37,16 +37,24 @@
 \microtypesetup{protrusion=true}
 
 \mainmatter{}
-
-\input{chapters/01_introduction}
-% TODO: add more chapters here
-
-\appendix{}
-
 \microtypesetup{protrusion=false}
 \listoffigures{}
 \listoftables{}
+
+\input{chapters/00_abbreviations} % Abbreviations
+\input{chapters/01_introduction}
+% TODO: add more chapters here
+\input{chapters/02_methodology.tex}
+\input{chapters/03_theoreticalbackground.tex}
+\input{chapters/04_ea_documentation.tex}
+
+%Prototypische Umsetzung
+%\input{chapters/}
+
 \microtypesetup{protrusion=true}
 \printbibliography{}
+
+\appendix{}
+
 
 \end{document}
