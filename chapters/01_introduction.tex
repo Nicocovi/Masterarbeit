@@ -3,15 +3,39 @@
 
 \chapter{Introduction}\label{chapter:introduction}
 
-%TODO: Introduction
+% TODO: short text. motivation + RQ.
 
-Companies operate in a dynamic marketplace defined by fast-changing technologies, shortened product life cycles and increasing specialization and competition in global value chains. The ability to adapt to the changing environment has become fundamental for companies to have an advantage over the competitors. Although the ability to adapt should create an advantage, it affects the whole enterprise by creating a heterogenous landscape of incompatible and costly information systems, business processes and organisational structures.(Strategic Enterprise Architecture Management: Challenges, Best Practices ...)
-% unter anderem
-Over the last decade EAM has become a strategic advantage. One of the  to create transparency of the application landscape within the enterprise, reduce the complexity and costs.
-% links to documentation
+\section{Motivation}
 
+Companies operate in a dynamic marketplace defined by fast-changing technologies, shortened product life cycles and increasing specialization and competition in global value chains. The ability to adapt to the changing environment has become fundamental for companies to have an advantage over the competitors. Although the ability to adapt should create an advantage, it affects the whole enterprise by creating a heterogeneous landscape of incompatible and costly information systems, business processes and organizational structures. \hl{(Strategic Enterprise Architecture Management: Challenges, Best Practices ...)}
+
+Over the last decade EAM has become a strategic advantage regarding the rapidly developing markets. One of the functions of EAM is to create transparency of the application landscape within the enterprise, reduce the landscape complexity and its costs.
+
+% in manually add: collected in a file and imported to EA tool?
+In order to achieve these goals, a highly accurated, consistent and uniform EA documentation is needed. However, EA often ends up with a scarce documentation.\hl{(Hauder Current Practices 2013)} EA documentation is one of the main problems when it comes to the collection of EA information, since most of the information is collected manually. Today's EA documentation is a very complex process due to the immense application landscape consisting of redundant and inconsistent data. The collection process is contemplated as very time consuming  process and the data quality is incomplete. Most of the organizations have no dedicated process for the collection of EA information which confirms the that the lack of governance in EA projects is one of the major challenges since it is difficult to document information for a "plethora of stakeholders". \hl{(Hauder Empirical Analysis) (Lucke, Critical Issues in Enterprise Architecting...) } Some organizations have tried to automate the process of EA documentation but the automated process is mostly limited to import manually a file which contains manually collected data/information. 
+Organizations should aim for a direct integration of information sources into EA Tools and target an automated EA documentation of external information sources such as cloud providers. 
+According to a cloud computing survey in 2016 companies are investing in cloud solutions to lower costs and replace legacy system. The benefits of cloud computing are that organizations do not need to buy infrastructure anymore which signifies considerable reduction on installation and maintenance of computing infrastructure costs.\hl{(IDG Executive Summary. Cloud Computing Survey. 2016)}
+
+Some organizations show the attempts of an automated EA documentation using Network Scanners and ESBs but the information concludes to be incomplete and not up-to-date. 
+The use of external information sources such as cloud providers will increase the actuality and data quality of the information delivering structured static and dynamic data enriching the EA Tool. In order to obtain that changes in cloud environments (as ext information sources) should update the EA documentation.
+% As proposed in survey by \hl{Hauder et al} the EA
+% mapping between information sources and meta model
+% focus on automated documentation
+% focus external sources such as cloud. cloud becoming important for focus on core competences
+% enrich ea tool con static y dynamic data
+% Control room concept of Brückmann as monitoring?
+% \hl{ ... }
+% doerst aussage
+In 2004, ter Doerst stated: "in 7 years from now, enterprise architecture will be a real-time tool for management and redesign of the enterprise for better performance, flexibility and agility". (ter Doerst, Tool Support for Enterprise Architecture)
+As shown in the survey of \hl{Hauder et al.} organizations are far away from using an EA Tool as a real-time tool. This thesis will propose a solution for improving the EA documentation regarding external sources, specially applications running on the cloud. Since lack of governance is one of the leading problems in EA this thesis will propose some guidelines % name conventions
+and a tool integration in the development pipeline to automate the documentation of cloud applications, enriching it by business specific information (Business domain assignments, \hl{...}) and anhance the documentation with dynamic data to enable a continuous process of monitoring application performance and infrastructure.
+% integrating dynamic data: real-tool
+% is still not like that.
+% link to performance
+% darueberhinaus monitoring para prozess de abajo.
+% cover automated documentation ea goernance, cloud as ext services.
+% para alcanzar todo eso integracion de toolchain an development pipeline
 \hl{ ... }
-
 
 \section{Research Questions}
 %Citation test~\parencite{latex}.
@@ -19,19 +43,20 @@ Over the last decade EAM has become a strategic advantage. One of the  to create
 %\subsection{Research Questions}
 
 To support this, the following research questions will be answered during this thesis.
+\begin{enumerate}
 
-1. What information is relevant for an EA Team?
+    \item What information is relevant for an EA Team?
 
-2. What data sources exist to gather EA relevant information?
+    \item What data sources exist to gather EA relevant information?
 
-3. How can these information sources be linked? (Consolidation projects)
+    \item How can these information sources be linked? (Consolidation projects)
 
-4. How can the linking process of information sources be supported by a tool-chain?
+    \item How can the linking process of information sources be supported by a tool-chain?
 
-5. How can a manual EA information collection process be automated with the help of an in-house development system?
+    \item How can a manual EA information collection process be automated with the help of an in-house development system?
 
-6. What does a prototype implementation of the automated documentation process of cloud applications look like?
-
+    \item What does a prototype implementation of the automated documentation process of cloud applications look like?
+\end{enumerate}
 \iffalse %begin comment
 See~\autoref{tab:sample}, \autoref{fig:sample-drawing}, \autoref{fig:sample-plot}, \autoref{fig:sample-listing}.
 
