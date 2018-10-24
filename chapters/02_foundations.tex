@@ -4,7 +4,32 @@
 \chapter{Foundations}\label{chapter:foundations}
 \section{Enterprise Architecture Management} 
 
+This chapter provides a theoretical overview of the discipline Enterprise Architecture Management. The most important concepts, related fields and its challenges related to EA are described in this chapter.
+
+The aim is to describe the EAD process of organizations. This section will present the specific EA information sources and the key problems regarding the EAD. The different approaches found in the literature are presented.
+
+%1.	Motivation. Um was geht es? In welchem Bereich befinden wir uns?
+%2.	Problemstellung. Welche Herausforderungen leitest du aus (1) ab?
+%3.	Lösungsziel. Welches Problem in (2) möchtest du genau lösen? 
+%4.	Lösungsansatz. Wie möchtest du das Problem in (2) lösen?
+%5.	Forschungsfragen. Welche Herausforderungen musst DU lösen um das Lösungsziel zu erreichen.
+%6.	Evaluationsumgebung. In welche Umgebung kannst du deinen Lösungsansatz evaluieren? Welche Tools stehen %dir zur Verfügung?
+%7.	Nächste Schritte.
+
 \subsection{Definition}
+The term Enterprise Architecture Management is composed of three words: Enterprise, Architecture and Management.
+According to ANSI/IEEE Std 1471-2000 architecture is defined as ‘the fundamental organization of a system, embodied in its components, their relationships to each other and the environment, and the principles governing its design and evolution.’
+Applying the aforementioned definition to the context of enterprises, the EA refers to the fundamental organization of an enterprise, embodied in its components (e.g. organizational units, stakeholders, locations, business processes), their relationships to each other (e.g. supports, hosts, is responsible for), and the principles (e.g. profit, continuity, innovation) governing its design and evolution.
+Architecture at the level of an entire organization is commonly referred to as “enterprise architecture” (EA). It is a coherent whole of principles, methods and models that are used in the design and realization of the enterprise’s organizational structure, business processes, information systems, and infrastructure.
+\hl{(Buckl 2009)}
+Additionally, the term management according to Mary Parker Follet refers to ‘the art of getting things done through people’ \hl{(van Aken 2005)}.
+\hl{(Buckl 2009)}
+\hl{(Jonkers 2006)}
+
+In summary the three terms results to the following definition: EAM conveys a holistic view of the entire organization including information about business, IT and their interrelations.
+EAM is promoted as an instrument to improve alignment of business and IT, realize cost savings portentials, and increase availability and fault tolerance.
+\hl{(Hauder 2012)}
+
 
 \subsection{Stakeholders}
 % \subsection{EAM Stakeholders}
@@ -13,25 +38,38 @@ CIO (CTO)
 Project Manager / IT Manager
 Product Owners
 
+\hl{(AdoIT grafik)}
+\hl{(Farwick 2013 - Information Sources)}
+
 \subsection{Use Cases}
 
 % EA MetaModel
 
+\subsection{Goals}
+The goals of the ANSI/IEEE Std 1471-2000 are inter alia the documentation, communication, and analysis of architectures. Based on the definitions given above, the main tasks of EA management are:
+Documentation: In order to support the plan phase of the management cycle, the current (as- is) situation of the EA has to be documented. Thereby, elements on different layers ranging from business and organizational to infrastructure aspects (see Figure 1) have to be considered to provide a holistic view on the enterprise. Prior to gathering the data about the current situation, an information model1 of the architecture has to be developed, which defines the elements and relationships in between constituting the EA. Besides the current situation, information about future states according to the plans has to be documented. Complementing the current and planned states of the EA an ideal target (to-be) state should be envisioned, which can be derived from the long-term vision of the enterprise.
+Communication: Gathering information from the different layers in the plan, do, and check phase, as introduced above, requires the involvement of a multitude of stakeholders, e.g. business process owners, project managers, business architects, etc. Although working for the same company, the terminologies used by these stakeholders differ widely. This communication issue is often referred to as the communication gap between business and IT \hl{(Lankes 2008, Schekkerman 2004)}. This gap is likely to hamper effective communication and collaboration in the EA management process. Visualizations are a commonly accepted means to bridge this gap. Another challenge is connected to the aspect of historization and traceability of management decision \hl{(Buckl et al. 2008)}. 
+Analysis: Concluding the management cycle, the current, planned, and target architecture of the enterprise have to be analyzed and evaluated in the check phase to support decision making and identify potential improvements \hl{(Johnson et al. 2007)}. The analysis results are finally used to improve the procedure of EA management itself in the act phase.
+\hl{(Buckl 2009)}
+
 \section{Cloud Computing} 
 
 \subsection{Definition}
+Cloud computing is a model for enabling universal, on-demand and convenient network
+access to a shared pool of configurable computing resources (e.g., servers, applications, storage, networks and services) that can be quickly provisioned and released with little to no management effort or service provider interaction”.
+\hl{(Isaac Odun-Ayo 2018)}
+\hl{(The NIST Definition of Cloud Computing. NIST Special Publication 800-145 2011.)}
+
 
 % Argumentation für Migration in die Cloud. Focus on core competences
 % Cloud Computing als Theoretical Background?
 
 \subsection{...}
 
-\section{EAM: Current Challenges} 
+\section{Eenterprise Architecture Documentation} 
 
-\subsection{EA Documentation}
 
-% \subsection{Information Sources}
-
+\subsection{Information Sources}
 
 Excel Import/ File Import
 
@@ -49,6 +87,7 @@ License Management Tools
 
 External Sources: Cloud Services
 
+\hl{(Farwick 2013 - Information Sources)}
 
 Maintenance of EA Models
 
@@ -61,6 +100,9 @@ leads to: High error rate documenting and collecting EA information
 Time consuming collection of information
 Expensive tasks
 
+\subsection{Current Challenges}
+
+
 % bafin regulatorische anforderungen
 
 Lack of Governance
@@ -72,19 +114,21 @@ Lack of Governance
 % Comparisson der Ansätze
 
 % Integration problems
-% \subsection{Current Practices}
+\subsection{Literature solution approaches}
 
-% \subsection{Documentation Challenges} 
+\subsection{Technology Trends} 
 
-\subsection{Agile}
+\subsubsection{Agile}
 CD, CI
 Short life cycles
 
-\subsection{Cloud-Migration}
+\subsubsection{Cloud-Migration}
 
 Legacy system migration
 
-\subsection{Monitoring}
+\subsubsection{Modularization}
+
+\subsubsection{Monitoring}
 
 
 % Comments: show IT, wie wird das erfasst?

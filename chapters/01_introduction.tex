@@ -42,23 +42,27 @@ and a tool integration in the development pipeline to automate the documentation
 
 %\subsection{Research Questions}
 
-To support this, the following research questions will be answered during this thesis.
-\begin{enumerate}
+To support this, the following research questions (RQ) will be answered during this thesis.
 
-    \item What information is relevant for an EA Team?
+\textbf{RQ1. How to assign the application landscape to business domains?}
+The first research question will demonstrate a solution approach to assign the business domain model to the application landscape.
 
-    \item What data sources exist to gather EA relevant information?
+\textbf{RQ2. How to obtain EA relevant information from the runtime behaviour of cloud based environments?}
+The goal of this research question is to identify what the possibilities are to obtain runtime information of applications running on the cloud and what information is relevant for EAM.
 
-    \item How can these information sources be linked? (Consolidation projects)
+\textbf{RQ3. How to automate the assignment process with an integrated toolchain?}
+The second research question will describe a process integrating the most common tools used within a company to automate the business assignments and the enterprise archutecture documentation process.
 
-    \item How can the linking process of information sources be supported by a tool-chain?
+\textbf{RQ4. How does a prototype implementation of the automated documentation process of cloud applications look like?}
+To demonstrate that the automated documentation of application running on cloud based environments is possible regarding the toolchain described in the question above (RQ3) this research question will describe a prototype implementation of the automated documentation process of cloud applications. The prototype implementation based on an open source project is an application and service inventory containing the EA relevant information and metadata of the applications or services. One of the technology trends mentioned before is Cloud migration. This reduces infrastructure and maintenance costs, reduces transparency but increases complexity of EA documentation due to the higher number of applications. The growing number of services is therefore a challenge. To increase the independence of the teams and increase the reusability of services the open source project was expanded to answer questions like: Which service runs where? Which domain does it belong to? What does it do? Who is responsible for that?
 
-    \item How can a manual EA information collection process be automated with the help of an in-house development system?
-
-    \item What does a prototype implementation of the automated documentation process of cloud applications look like?
-\end{enumerate}
 
 \section{Approach}
+This thesis is composed by a literature review and a case study of the solution proposal. The purpose solution approach for automating Enterprise Architecture Documentation (EAD) by investigating major technology trends that influence EAM, how they affect EAM and how an automated EAD process can lead to improved EAM use cases.
+First the scope and the research questions of this work will be described. The aim is to get an overview of EA and how data is collected in organizations. As marked before, organizations struggle with the documentation of their current sate due to the o the immense application landscape consisting of redundant and inconsistent data. Organization seek to automate that EA documentation process, that is why the focus of the literature will depict the approaches to automate the EA documentation process with the relevant data sources to introduce a new solution approach because current research endeavours lack in integrating cloud aspects (PaaS and SaaS) for automated EA documentation. The solution approach will include the technology trends that influence nowadays the EAM such as agile development (continuous delivery and integration), cloud aspects and decomposition of legacy systems into application components or microservices. Regarding the EAD, the advantages and the challenges are depicted. Once the solution approach has been develop it has to be analyzed and evaluated in a productive environment. For the development and evaluation phase of the solution approach an insurance company was examined regarding its process of EA documentation.
+
+The last phase of this work will target the Application Performance Monitoring (APM). Performance data is gathered during the EA documenation process and a set of metrics is generated based on the performance data. The performance of the application is measured using the metrics to conclude operation and strategic decisions for the EAM. It follows that improved EAM use cases can be derived from an automated EA documentation process taking into consideration APM.
+
 For the following chapters a systematic literature analysis according to the guidelines and the process model of Webster and Watson (2002) was carried out (Webster / Watson2002). The research relates to different terms or areas \hl{(XXX, XXX, XXX)}. First, different terms have been identified to cover different aspects of each chapter. Among other things, a search with a number of combinations of the relevant terms was completed for the individual chapters.
 The databases used for the search provide a variety of publications, which is why a broad coverage of the terms is possible. The databases used for this work are as follows:
 
@@ -69,15 +73,19 @@ The databases used for the search provide a variety of publications, which is wh
     \item University Library of the Technical University of Munich
 \end{itemize}
 
-For the search results of the \hl{ first two chapters (XXX, XXX),} the following search criteria were used in meaningful combinations:
+For the search results the following search criteria were used in meaningful combinations:
 
 \begin{itemize}
     \item Enterprise Architecture
     \item Enterprise Architecture Management
     \item Automated documentation
     \item Cloud Computing
-    \item \hl{...}
+    \item Continuous Delivery/ Integration
+    \item Microservices
+    \item Application Performance Monitoring
     
 \end{itemize}
 
 In addition, a backward search and a forward search were performed. This results in a larger total of results. Since the Technical University of Munich provides its students with a number of licenses, it is possible to use scientific research databases. The quality of the search results is ensured by the licenses for the databases and proves to be very helpful.
+
+Figure 1.1 gives a comprehensible overview of the research approach.
