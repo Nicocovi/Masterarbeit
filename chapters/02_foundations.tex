@@ -6,7 +6,7 @@
 
 This chapter provides a theoretical overview of the discipline Enterprise Architecture Management. The most important concepts, related fields and its challenges related to EA are described in this chapter.
 
-The aim is to describe the EAD process of organizations. This section will present the specific EA information sources and the key problems regarding the EAD. The different approaches found in the literature are presented.
+The aim is to describe the EAD process of organizations. This section will present the specific EA information sources and the key problems regarding the EAD. First EAM is defined and the stakeholders are mentioned. Then the different use cases of EAM will be presented. Since documenting the current state of the enterprise IT landscape is one of the uses cases, the different approaches found in the literature for automating that documentation process are presented.
 
 %1.	Motivation. Um was geht es? In welchem Bereich befinden wir uns?
 %2.	Problemstellung. Welche Herausforderungen leitest du aus (1) ab?
@@ -16,119 +16,219 @@ The aim is to describe the EAD process of organizations. This section will prese
 %6.	Evaluationsumgebung. In welche Umgebung kannst du deinen Lösungsansatz evaluieren? Welche Tools stehen %dir zur Verfügung?
 %7.	Nächste Schritte.
 
-\subsection{Definition}
+\subsection{EAM Definition}
 The term Enterprise Architecture Management is composed of three words: Enterprise, Architecture and Management.
 According to ANSI/IEEE Std 1471-2000 architecture is defined as ‘the fundamental organization of a system, embodied in its components, their relationships to each other and the environment, and the principles governing its design and evolution.’
-Applying the aforementioned definition to the context of enterprises, the EA refers to the fundamental organization of an enterprise, embodied in its components (e.g. organizational units, stakeholders, locations, business processes), their relationships to each other (e.g. supports, hosts, is responsible for), and the principles (e.g. profit, continuity, innovation) governing its design and evolution.
-Architecture at the level of an entire organization is commonly referred to as “enterprise architecture” (EA). It is a coherent whole of principles, methods and models that are used in the design and realization of the enterprise’s organizational structure, business processes, information systems, and infrastructure.
+%Enterprise Architecture definition
+Applying the previous mentioned definition to the context of enterprises, the EA refers to the fundamental organization of an enterprise, embodied in its components (e.g. organizational units, stakeholders, locations, business processes), their relationships to each other, the principles, methods and models that are used in the design and realization of the enterprise’s organizational structure.
 \hl{(Buckl 2009)}
 Additionally, the term management according to Mary Parker Follet refers to ‘the art of getting things done through people’ \hl{(van Aken 2005)}.
 \hl{(Buckl 2009)}
 \hl{(Jonkers 2006)}
-
-In summary the three terms results to the following definition: EAM conveys a holistic view of the entire organization including information about business, IT and their interrelations.
-EAM is promoted as an instrument to improve alignment of business and IT, realize cost savings portentials, and increase availability and fault tolerance.
+In summary the three terms results to the following definition: EAM is promoted as an instrument to improve alignment of business and IT, ideally suggesting a common language and a framework across the company to determine  which business and technical domains, business processes, information systems and technical building blocks are used conveying a holistic view of the entire organization to realize cost savings potentials, and increase availability and fault tolerance.
 \hl{(Hauder 2012)}
+\hl{(Hanschke 2006)}
+
+\subsection{EAM Stakeholders}
+For a successful operation of EAM all relevant stakeholder groups need to be identified and involved.
+When analyzing which stakeholder groups play a role in the organizations EAM initiative central functions, departments and project organizations as well as IT and external organizations have to be included. 
+%The following questions can help for determine the stakeholder-groups: Who is the contracting authority? What concerns are associated with EAM? Who is the data supplier?
+Figure \hl{XXX} shows an overview of the stakeholder groups that typically influence, have an interest or can benefit from EAM. \hl{(Hanschke ???)}
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/eam-stakeholder.png}
+  \caption{ \hl{In Anlehnung an}Different stakeholder groups with interest in EAM~\parencite{Hanschke 2013}}
+  \label{fig:Differet stakeholder groups with interenst in EAM}
+\end{figure}
+
+The following list shows stakeholder groups that are often involved in EAM initiatives in practice. The structuring is based on the TOGAF categories:\hl{(TOGAF Quelle)}
+\begin{itemize}
+    \item Corporate Functions
+    \item End-User Organization
+    \item Project Organization
+    \item System Operations
+    \item Externals
+\end{itemize}
+
+Not all categories are explained in detail. Only some stakeholder groups relevant for further sections of this work will be described briefly. These are named below and their tasks and EAM concerns are also explained. Some category mappings may vary by company. For example, enterprise architects are assigned to the stakeholder category IT.
+
+\subsubsection{Corporate Functions}
+\textbf{CIO (CTO)}: How are we performing on delivering our strategic goals? The CIO (CTO) covers the strategic corporate planning and definition of long-term target and framework requirements as well as planning and control systems and the corporate organization. The benefits of an EAM initiative is to ensure an optimization of the day-to-day business for the CIO (CTO) gathering a cross-company information report from the EAM database to provide the implementation of the corporate/enterprise goals.
+
+\subsubsection{End-User Organization}
+\textbf{Business manager}(including head of business units or areas and department heads): responsible for increasing the business IT alignment and further development of business and business architecture. Business managers endeavour to discover and remove technical redundancies and divisional differences in business processes and business capabilities and their IT support.
+
+\subsubsection{Project Organization}
+\textbf{Project leader or managers}: Responsible for the operative planning and control of a project. The expected benefits are reduced project preparation and input for project execution as well as input for operational planning and control of the project.
+In addition to project managers, other stakeholder groups of a project organization may also benefit from EAM results. Examples include business analysts, software architects or solution architects. Solution architects often ensure the proper implementation of the development planning in projects through collaboration or review. 
+%In collaboration with the project managers the channels of the offered %product is decided Which products will we offer via which channels? What %is the impact of making a change? What are the dependencies?
+
+\subsubsection{System Operations}
+\textbf{Enterprise Architects}: Main resposible for implementing and desgining and EAM initiative. Also in charge for the implementation of technical standards and principles and their use in the information system landscape and in the operational infrastructure as well as operational infrastructure development and the provision of SLAs at the operational infrastructure level.
+%Which capabilities require investment to deliver our goals?
 
 
-\subsection{Stakeholders}
-% \subsection{EAM Stakeholders}
-Enterprise Architects (Software Architects)
-CIO (CTO)
-Project Manager / IT Manager
-Product Owners
+\subsubsection{Externals}
+This category includes partners and suppliers, such as outsourcing service providers. The application of EAM to this category is the improvement of technical standards and specifications for the target development as input and framework conditions for services. The analysis of dependencies and effects of changes and the fulfillment of SLAs are also covered.
 
-\hl{(AdoIT grafik)}
-\hl{(Farwick 2013 - Information Sources)}
+%Other stakeholder questions:
+%Which applications are at risk from end-of-life technology?
+%Which applications get replaces when?
+%Which risks require mitigation? What are our greatest threats?
 
-\subsection{Use Cases}
+\subsection{EAM Use Cases}
 
 % EA MetaModel
+% use case areas
+% Dependency management
 
-\subsection{Goals}
-The goals of the ANSI/IEEE Std 1471-2000 are inter alia the documentation, communication, and analysis of architectures. Based on the definitions given above, the main tasks of EA management are:
-Documentation: In order to support the plan phase of the management cycle, the current (as- is) situation of the EA has to be documented. Thereby, elements on different layers ranging from business and organizational to infrastructure aspects (see Figure 1) have to be considered to provide a holistic view on the enterprise. Prior to gathering the data about the current situation, an information model1 of the architecture has to be developed, which defines the elements and relationships in between constituting the EA. Besides the current situation, information about future states according to the plans has to be documented. Complementing the current and planned states of the EA an ideal target (to-be) state should be envisioned, which can be derived from the long-term vision of the enterprise.
-Communication: Gathering information from the different layers in the plan, do, and check phase, as introduced above, requires the involvement of a multitude of stakeholders, e.g. business process owners, project managers, business architects, etc. Although working for the same company, the terminologies used by these stakeholders differ widely. This communication issue is often referred to as the communication gap between business and IT \hl{(Lankes 2008, Schekkerman 2004)}. This gap is likely to hamper effective communication and collaboration in the EA management process. Visualizations are a commonly accepted means to bridge this gap. Another challenge is connected to the aspect of historization and traceability of management decision \hl{(Buckl et al. 2008)}. 
-Analysis: Concluding the management cycle, the current, planned, and target architecture of the enterprise have to be analyzed and evaluated in the check phase to support decision making and identify potential improvements \hl{(Johnson et al. 2007)}. The analysis results are finally used to improve the procedure of EA management itself in the act phase.
-\hl{(Buckl 2009)}
+In regard to the discipline EAM the use case types can be divided into two categories: operational and strategic use cases. This section will only list some key uses cases.
 
-\section{Cloud Computing} 
+%Operational use cases
+\subsubsection{Operational EAM use cases}
+Operational use cases aim to support the current business cost-effectively and reliably with the help of IT, while continuously improving the IT support. The main challenges are: cost reduction, to reduce complexity of the IT landscape, the optimization of day-to-day business and identify risks. \hl{(Hanscke 2013)}.
+
+As mentioned above only key uses cases are named in this section. Here is a list of some operational use cases:
+
+%Metamodel hervorheben. Metamodel für abhängigkeiten
+\textbf{Meta model as a common language}: Before gathering the EA data about the current state, an meta model of the architecture has to be defined, which describes the elements and relationships in between constituting the EA meta model to enable a common language across the organization. Collecting information from different layers requires the involvement of a multitude of stakeholders, e.g. business process owners, project managers, business architects, etc. Although working for the same organization, the definitions used by these stakeholders differ widely. This communication problem is often referred to as the communication gap between business and IT \hl{(Lankes 2008, Schekkerman 2004)}. This gap restricts adequate communication and collaboration in the EA management process.\hl{(Buckl et al. 2008)}. There are often more interactions between IT and business, as expected. To overcome this gap an EAM common language is needed. The resulting metamodel is used as the reference in the dialogue with the both parties.\hl{(Hanschke 2013)}
+
+\textbf{EA Documentation}: In order to enable EAM and its life cycle, the current (as- is) state of the EA has to be documented. The different elements and layers covering business, organizational and infrastructure aspects have to be enclosed to provide a holistic view on the enterprise. The information gathered about the current situation, enables the planing for future states. Complementing the current and planned states of the EA an ideal target (to-be) state should be envisioned, which can be derived from the long-term vision of the enterprise. \hl{(Buckl et al. 2008)}. This use case will be described in detail in \subsectionautorefname{} Enterprise Architecture Documentation.
+
+\textbf{Standardization and homogenization}: Definition of technical standards and monitoring of compliance and promotion of implementation. The goal of this use case is to reduce the IT complexity supporting the re-usability of proven technical building blocks. This increases the technical quality. The standardization and homogenization of technical standards concludes to a continuous cost reduction through the use of economies of scale and the bundling and reduction of the different know-how expertise.\hl{(Hanschke 2013)}
+
+\textbf{Project portfolio management}: Creation of transparency about applications to optimize the support of business through IT and the planification of the roadmap for target architecture, ensuring the implementation of planned future development, IT consolidation and compliance in planning, prioritization, and overall governance and monitoring of the project portfolio. Through targeted management of project resources costs and also the IT complexity can be reduced.\hl{(Hanschke 2013)}
+
+\textbf{Demand Management}: Planning and controlling the flow of strategic and operational business requirements for implementation through demand management. Demand Management translates the requirements between business and IT. As a bottleneck for the planning and control of the implementations of the business, it ensures that the technical goals and business requirements are adequately implemented.
+
+%Strategic use cases
+\subsubsection{Strategic EAM use cases}
+Strategic use cases intent to improve systematically the development and strategic alignment of the different responsible. The main challenges are the setting of specifications and guarantee the compliance (EA Governance) and the progression of Business-Innovation and -Transformation.
+
+\textbf{IS-Portfoliomanagement}: Identification of the potentials for the optimization in the IT landscape through the analysis of the architecture. One of the goals is to reduce the IT complexity through continuous IT consolidation and thus a sustainable reduction of IT costs. Another goal is to increase business IT alignment by evaluating the contribution of the IT to the business.
+
+\textbf{Business-Transformation}: Standardization and homogenization of the future IT landscape
+concerning the implementation of enterprise and IT strategy. The assurance of decisions can be ensured through the analysis of the dependencies and the effects of the IT landscape in relation to the business landscape.
+
+According to the ANSI/IEEE Std 1471-2000 the main tasks of EAM are documentation (operational), communication (operational), and analysis of architectures (strategic). The following section will give a general outline of the enterprise architecture documentation.
+
+
+\section{Enterprise Architecture Documentation} 
+
+EAM begins with the documentation of the current state according to the defined EA metamodel to  derive future plans for an improved EA. Organizations endeavour with the documentation of the current state due to the complexity of enterprise architecture. This section will provide an overview of the enterprise architecture documentation process.
 
 \subsection{Definition}
-Cloud computing is a model for enabling universal, on-demand and convenient network
-access to a shared pool of configurable computing resources (e.g., servers, applications, storage, networks and services) that can be quickly provisioned and released with little to no management effort or service provider interaction”.
-\hl{(Isaac Odun-Ayo 2018)}
-\hl{(The NIST Definition of Cloud Computing. NIST Special Publication 800-145 2011.)}
 
-
-% Argumentation für Migration in die Cloud. Focus on core competences
-% Cloud Computing als Theoretical Background?
-
-\subsection{...}
-
-\section{Eenterprise Architecture Documentation} 
-
+This first core product of EAM is the documentation of the current implementation of business processes, IT systems, and infrastructure (Schmidt and Buxmann 2010; Lankhorst et al. 2009; Kaisler et al. 2005; van der Raadt and van Vliet 2008). It needs to provide a current (PQ1a) and complete (PQ1b) view of the as-is architecture providing the right degree of detail (PQ1c) (Schmidt and Buxmann 2010; Foorthuis et al. 2010; Aier et al. 2011; Riege and Aier 2009; Winter and Fischer 2007; Aier and Schelp 2009; Bricknall et al. 2006; Schmidt and Buxmann 2010; Winter and Fischer 2007; Pulkkinen 2006). 
 
 \subsection{Information Sources}
+A survey conducted by \hl{Farwick} presents the major information sources for an EAD. This survey was done to provide an comprehensive analysis of possible information sources and their appropriateness for EA since research activities still seek to automate the data collection process.
 
-Excel Import/ File Import
+The information sources correspond to the tools used by the participants of the survey. In addition, the participants also expressed their concerns regarding the EA relevant data delivered by the tool in respect of the following data properties in the EA context: actuality, completeness, correctness and granularity \hl{Farwick 2013}
 
-Network Scanners and Monitors
+\subsubsection{Network Scanners and Monitors}
+%include source [4] of farwick 2013
+The most common potential information source for an automated EAD are Network Scanners and Monitors. Operations teams often use these sources to monitor the infrastructure and its performance. As analyzed in the survey more than 60 percent of all organizations use Network Scanners.
+Relevant data for network scanners are servers, applications and databases. However, the data gathered from this sources is too granular. The data can then not me mapped to the EA meta model. Nonetheless the correctness and the actuality of the data are considered positive. Since network scanners cannot cover all technologies the quality  of the collected data is worst of all information sources.
 
-CMDB
+\subsubsection{Configuration Management Database}
+Configuration Management Databases (CMDBs) are databases that store relevant information about hardware instances used in an organization's IT services and the relationships between those instances and the related incidents at an operational level.\hl{ITIL}
+A CMDB should contain data about server, database and application instances. This data is mostly colleected and maintained manually. Same as with the network scanners, the data is too granular and organizations often use CMDBs for a strategic planning of EA since they provide all instances within the organization. \hl{farwick 2013}
 
-PPM Tool
+\subsubsection{Project Portfolio Management tools}
+Porjects are often modeled as a part of the EA metamodel. Project Portfolio Management (PPM) tools can trigger the EA maintenance process since a PPM tool often contains information about the start and end date, budget information and artifacts affected b the project. This data should be integrated with the EA tool since the aspect of project changes is a central aspect of EAM. \hl{farwick 2013}
+The actuality and completeness of the data is in most cases maintained regularly but it depends on project management of the organizations. On the pther hand it is difficult to decide which project is actually architecture relevant so the granularity is affected by that.
 
-ESB
+\subsubsection{Enterprise Service Bus}
+%Include dependendy mngt in Use cases
+There is no common definition for Enterprise Service Buses (ESB) but in most cases ESBs act like a layer on top of the applications allowing the communication between them. The messages sent by the applications can be routed through the ESB which makes the communication possible. The transformation of the messages facilities the connection of different applications to use their own native message formats. This layer enables the integration of third party and legacy
+systems. This leads to a total dependency of the IT landscape. \hl{Falko 2007}
+The analysis and optimization of dependencies between applications is also a central aspect of the EAM discipline. This is the reason why the actuality and correctness of the data quality attributes received very positive evaluations. However, the integration of an ESB and transformation and mapping of the communication between the applications is very challenging. This affected the answers about the data granularity. \hl{Farwick 2013}
 
-Change Management Tool
+\subsubsection{Change Management Tool}
+Change Management Tool are used to improve the procedure of implementing changes in the
+IT-landscape. Frequently the tools are maintained manually and thus do not cover all changes. This is reflected in the answers for data actuality, correctness and completeness. The negative
+outcome for the granularity also implies that the data is difficult to map to EA metamodel.
+Nevertheless Change Management tools can trigger a manual action to keep the EA tool up-to-date.
 
-License Management Tools
+\subsubsection{License Management Tools}
+License Management Tools provide an overview of acquired software licenses. The information provided by the tool is the number of installations, number of users, costs, acquisition date and type and duration of licenses. The information was seen as EA relevant. Actuality, completeness, and correctness had a good outcome, whereas granularity has a moderated outcome. A large number of participants of the survey could not value the data quality attribute of a license management tool. This indicates that EA stakeholders do not always access these tools and therefore the integration depends on the usage.
 
-External Sources: Cloud Services
+\subsubsection{Excel Import/ File Import}
+Many of the participants of the survey pointed out that the import of file, specially importing excel-sheets is a potential information sources since many of the organizations still rely on the usage of Microsoft Excel sheets for keeping data.
 
-\hl{(Farwick 2013 - Information Sources)}
+\subsubsection{External Sources: Cloud Services}
+
+The usage of cloud services was mentioned frequently for collecting infrastructure data. \hl{(Farwick 2013 - Information Sources)} Apart from documenting traditional hardware, cloud infrastructure information needs to be collected in an EA tool. Cloud-based environments are much more volatile than traditional environments. Therefore, it is important to integrate EA tools with cloud infrastructure to enable tracking of changes occurring in the cloud. \hl{(Farwick 2010 - Towards)}
+
+
+\subsection{EA Documentation Challenges}
+
+Nowadays the documentation process of the EA is performed in most of the organizations manually. This leads to many challenges:
+
+\subsubsection{Data challenges}
 
 Maintenance of EA Models
-
 High Complexity: Manual collection of EA data
 High number of applications
 Data redundancy
 Inconsistent data
-
 leads to: High error rate documenting and collecting EA information
 Time consuming collection of information
 Expensive tasks
 
-\subsection{Current Challenges}
+\subsubsection{EA Governance}
+% bafin regulatorische anforderungen?
 
-
-% bafin regulatorische anforderungen
-
-Lack of Governance
 % Agil: jedes Team benutzt irgendwelche Tools vs EA/IT Governance: Vorgaben von richtlinien
 
 % Annahme: Da lack of governance: Toolchain "Integration" in die Development pipeline für die Dokumentation
 
+\subsubsection{Tooling}
+
+
+\subsubsection{Fast changing environment}
+
 % Welche Lösungsansätze gibt es bereits
 % Comparisson der Ansätze
+% Comments: show IT, wie wird das erfasst?
 
-% Integration problems
-\subsection{Literature solution approaches}
+\section{Technology trends influencing EA}
 
-\subsection{Technology Trends} 
+XXX
 
-\subsubsection{Agile}
+\subsection{Agile development and Continuous Delivery and Integration}
+
 CD, CI
 Short life cycles
 
-\subsubsection{Cloud-Migration}
+\subsubsection{Definition}
 
-Legacy system migration
+\subsection{Modularization}
+%Decomposition of legacy systems into modules / microservices
+\subsubsection{Definition}
 
-\subsubsection{Modularization}
+\subsection{Cloud Computing}
+% Argumentation für Migration in die Cloud. Focus on core competences
+% Cloud Computing als Theoretical Background?
 
-\subsubsection{Monitoring}
+Migration of legacy systems
+
+\subsection{Monitoring}
+
+\subsubsection{Definition}
+Cloud computing is a model for enabling universal, on-demand and convenient network access to a shared pool of configurable computing resources (e.g., servers, applications, storage, networks and services) that can be quickly provisioned and released with little to no management effort or service provider interaction”.
+\hl{(Isaac Odun-Ayo 2018)}
+\hl{(The NIST Definition of Cloud Computing. NIST Special Publication 800-145 2011.)}
 
 
-% Comments: show IT, wie wird das erfasst?
+
+\section{Automated Enterprise Architecture Documentation}
+
+This work will target automation of the documentation use case  trying to improve the strategic analysis with the help of application monitoring as a result of the automated EAD. First, the technology trends covered in the section beforehand are outlined regarding the impact they have on EAD. Then the different solution approaches found in the literature review are presented.
+
+\subsection{Technology Trends in automated EAD} 
+
+\subsection{Literature solution approaches}
+
+\subsection{}
