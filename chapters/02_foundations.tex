@@ -166,69 +166,103 @@ The usage of cloud services was mentioned frequently for collecting infrastructu
 
 Nowadays the documentation process of the EA is performed in most of the organizations manually. This leads to many challenges:
 
-\subsubsection{Data challenges}
+\subsubsection{Modeling}
+As mentioned before, a meta model of the architecture has to be defined before documenting the current architecture. The model will be used as a common language between the different stakeholders. However, the model should depict the alignment between the business and the IT in way that it can be understood by the stakeholders. This is not often a very easy task.
 
-Maintenance of EA Models
-High Complexity: Manual collection of EA data
-High number of applications
-Data redundancy
-Inconsistent data
-leads to: High error rate documenting and collecting EA information
-Time consuming collection of information
-Expensive tasks
+\subsubsection{Stakeholders}
+The documentation of the current architecture should cover the different perspectives of the stakeholders. Often the management level has difficulties deriving meaningful metrics as a result of the return on investment. This is why the management level does no often support EA and its documentation since its misunderstood as a project and it is not seen as a process to improve the IT landscape.The absence of support from the management of level of the organizations is one.
+
+\subsubsection{Tooling}
+An important challenge regarding EAD is the tool selection. Most of the tools do not offer enough support to integrate other information sources within the company. The lack of integration leads to a very expensive process of integrating the existing tools for a broad EAD.
+Another problem regarding the tool is the maintenance of the EA model. Most of the tools impede an easy adaptation of their metamodels.
+
+\subsubsection{Data challenges}
+As mentioned already several times, most organizations collect EA data manually. This is the biggest challenge regarding EAD. Due to the problems integrating the information sources, the amount of information that needs to be collected is immense. The data sources contain information on different granularity levels and the transformation of this data is a complicated process.
+Collecting EA data manually is a very time consuming and therefore an expensive taks. Since the collection process is performed manually the odds of producing high error rated data is very high. This concludes with inconsistent and redundant data.
 
 \subsubsection{EA Governance}
+The lack of governance is also a very important aspect when documenting the enterprise architecture. In most organizations the absence of governance is a major issue since there are no governance guidelines and principles respecting EAD.
+
+%This is caused by insufficiently defined roles, responsibilities, processes and procedures Often there exists no common agreement on principles or guidelines for the EA development process. no formal steps exist for defining, maintaining, and implementing enterprise architecture
 % bafin regulatorische anforderungen?
 
 % Agil: jedes Team benutzt irgendwelche Tools vs EA/IT Governance: Vorgaben von richtlinien
 
 % Annahme: Da lack of governance: Toolchain "Integration" in die Development pipeline für die Dokumentation
 
-\subsubsection{Tooling}
-
-
 \subsubsection{Fast changing environment}
+The fast changing environment of an organization is an influential factor. The infrastructure and the technologies vary rapidly and affects the organization when it comes to time to market. How can a enterprise make use of the developing market to improve its enterprise architecture and productivity to increase its performance and promote the time to market of services and products.\hl{Lucke 2010, Kaiser 2005, Roth Current Practices}
 
-% Welche Lösungsansätze gibt es bereits
-% Comparisson der Ansätze
-% Comments: show IT, wie wird das erfasst?
+
+The following section will explain in detail which current trends have an impact on EA.
+%Conclucsion satz?As a result, it is much harder to both qualitatively and quantitatively describe and measure the benefits of enterprise architecting.
+
 
 \section{Technology trends influencing EA}
 
-XXX
+This section will describe the main technology trends that influence EA. The first technology trend presented is agile development and continuous practices. Later the modularization of systems is being explained. Subsequently cloud computing is described and ultimately monitoring of applications is presented.
 
-\subsection{Agile development and Continuous Delivery and Integration}
+These technology trends have nowadays an impact on EAM. How to integrate these to an automated EAD is explained in the next section. 
 
-CD, CI
-Short life cycles
+\subsection{Agile development and Continuous Practices}
 
-\subsubsection{Definition}
+During the last decade some development methodologies have emerged and gained an important role for enterprises.We can sum the two previous definitions to the term continuous practices.
 
-\subsection{Modularization}
-%Decomposition of legacy systems into modules / microservices
-\subsubsection{Definition}
+\subsubsection{Agile development}
+"Agile methodologies emphasize rapid and flexible development. The main characteristics of agile development are short releases, flexibility, and minimal documentation". \hl{Less is more 2013}
+
+\subsubsection{Continuous Delivery Definition}
+"Continuous Delivery (CD) is a software engineering discipline in which teams keep producing valuable software incrementally in short cycles and ensure that the software can be reliably released at any time." \hl{Chen 2015}
+
+\subsubsection{Continuous Integration Definition}
+"Continuous Integration (CI) is a widely established
+development practice in software development industry [4],
+in which members of a team integrate and merge development
+work (e.g., code) frequently, for example multiple
+times per day. CI enables software companies to have shorter
+and frequent release cycle, improve software quality, and
+increase their teams' productivity [4]. This practice includes
+automated software building and testing [5]."\hl{Chen 2015}
+
+\subsubsection{Impact of agile development and continuous practices on EA}
+EAM follows a top-down approach derived from the goals and strategy of the enterprise. However, agile development is used on a project-level. This level is more granular since the project is decomposed into requirements. This is due to the short-term planning of the project increasing the dynamic of the project being able to change requirements faster and enabling a quicker time-to-market. Therefore it leads to shorter life cycles. This does not mean that due to the short amount of time between these cycles agile teams do not document. On the contrary, teams need to document their results in detail since its not always ensured that the same team will still work on the projects.
+
+The documentation of agile teams is too granular for EAM. Integrating these two perspectives would lead to a more dynamic EA since it would focus more on the collaboration with the agile development of a project and would benefit of the resulting documentation of the agile teams. 
+
+EAM would not be perceived as an 'ivory tower' while working together with the agile teams and it would take the advantage of cooperating with the teams to how these projects influecen the To-Be IT landscape and if these projects ensure follow IT Governance rules, guidelines and compliance. \hl{Sebastian hanschke 2015}
 
 \subsection{Cloud Computing}
-% Argumentation für Migration in die Cloud. Focus on core competences
-% Cloud Computing als Theoretical Background?
-
-Migration of legacy systems
-
-\subsection{Monitoring}
 
 \subsubsection{Definition}
-Cloud computing is a model for enabling universal, on-demand and convenient network access to a shared pool of configurable computing resources (e.g., servers, applications, storage, networks and services) that can be quickly provisioned and released with little to no management effort or service provider interaction”.
+"Cloud computing is a model for enabling universal, on-demand and convenient network access to a shared pool of configurable computing resources (e.g., servers, applications, storage, networks and services) that can be quickly provisioned and released with little to no management effort or service provider interaction”.
 \hl{(Isaac Odun-Ayo 2018)}
 \hl{(The NIST Definition of Cloud Computing. NIST Special Publication 800-145 2011.)}
 
+\subsubsection{Impact of cloud computing on EA}
+Cloud computing is influencing the IT environment. It is easy to deploy applications to cloud-based environments. The requirements and the needed resources can be easily adapted to the user. This adaptation of the infrastructure enables reduced costs and the need for investment in computing infrastructure. This is why organisations are increasing the investments to migrated their infrastructure to cloud service providers (CSP). Moving the infrastructure concludes to a significant cost reduction of computing resources. Not having to maintain these resources allows the organisations to focus on their core competences. \hl{Isaac Odun-Ayo 2018}
 
+One of the reasons for moving to the cloud is to reduce the total cost of ownership and replacing legacy systems. \hl{Isaac Odun-Ayo 2018} In addition to this reason the continuous growth of the agile development has aroused another trend which is coupled to cloud computing. The importance of small teams in the context of agile development and the increasing significance to reduce time-to-market has made emerged the concept of microservices. 
 
-\section{Automated Enterprise Architecture Documentation}
+"A microservices architecture is a cloud-native architecture that aims to realize software systems as a package of small services. Each service is independently deployable on a potentially different platform and technological stack. It can run in its own process while communicating through lightweight mechanisms such as RESTful or RPC-based APIs." \hl{Microservices Architecture Enables DevOps}
 
-This work will target automation of the documentation use case  trying to improve the strategic analysis with the help of application monitoring as a result of the automated EAD. First, the technology trends covered in the section beforehand are outlined regarding the impact they have on EAD. Then the different solution approaches found in the literature review are presented.
+As mentioned before migrating legacy systems to the cloud is one of the main reasons. However the migration of monolithic architecture means changing the architecture to a microservice architecture. The main problem of a microservice architecture is the very large number of small structures like microservices running on a cloud-based environment which leads to an increased complexity of the IT landscape. The high degree of heterogeneity of these structures also increments the complexity.
+On the other hand, the migration produces many advantages.
+As already mentioned the main advantage of having a microservice architecture the ability to reduce the time-to-market and also the adaptability to change the technology stack of small structures to avoid technological lock-ins.\hl{Microservices Architecture Enables DevOps}
 
-\subsection{Technology Trends in automated EAD} 
+Another advantage of merging agile development with the trend of microservices is the ability to enable on-demand deployment integrating CD and/or CI to the cloud-based environment. This enables the possibility to detect failures and to receive feedback during the deployment process with the practice of continuous monitoring (CM). \hl{Microservices Architecture Enables DevOps}
 
-\subsection{Literature solution approaches}
+Establishing a connection between cloud computing and EAM would solve the time consuming and manual task of capturing EA relevant information and would increase the actuality of the data. \hl{Farwick 2010}
 
-\subsection{}
+\subsection{Monitoring}
+
+As mentioned above the complexity of the IT landscape increases due to the challenges named. The raises the need for monitoring and analyzing tool. Monitoring the performance of applications affects in many ways. Application Monitoring (AM) tools, such as Dynatrace, brings many benefits to the enterprises. The AM tools not only deliver metrics about the system health, the consumption of the computing resources of the platform, they also deliver many other thousands of metrics such as response time, http calls, failure rates, etc. \hl{Tilmann Rabl 2012}
+
+\subsubsection{Impact on EA}
+Extending the EA context with application monitoring metrics allows EAM to derive new information. \hl{Frank} recommended the synchronization of perfomance indicators at runtime level or indicator systems with the EAM view \hl{Frank, Farwick 2010}. Retrieving metrics such as open connections, latency and the number of cores in the host CPUs led to congestion and decreased the performance of the system. Applying this knowledge, the system can be configured to perform better. \hl{Tilmann Rabl 2012} The analysis of the measurements of AM tools is applicable to more use cases such as  on-line advertisement marketing, click stream storage, and power monitoring. \hl{Tilmann Rabl 2012}
+From a IT-governance perspective it is useful to monitor applications to realize and control changes in the cloud. For this a view of the applications running on cloud-based environments of the enterprise is needed. Thus, the enterprise architects can supervise the laws and regulations that need to be applied to these environments. 
+Regulations regarding the storage of private data in a public cloud is prohibited by the European Union. For this an application inventory of the individual cloud is required because this regulation forbids the export of the private data to non-EU countries. There cloud applications need to be compliant with this regulation called EU Data Protection Directive. The negligence of this regulation can result in a significant financial damage and the growth of uncertainty from the customers. \hl{Farwick 2010}
+
+%Conclussion
+\subsubsection{}
+This work will present an automated process of documenting EA integrating the depicted technology trends influencing EAM. The integration of the technology trends facilitates the EAD and enables the automation of it. The purpose of the automated EAD is to derive improved EAM use cases.
+
