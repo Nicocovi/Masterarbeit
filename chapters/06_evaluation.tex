@@ -1,12 +1,12 @@
+\chapter{Evaluation}\label{chapter:evaluation}
+
 % !TeX root = ../main.tex
 % Add the above to each chapter to make compiling the PDF easier in some editors.
-
-
-\chapter{Case study}\label{chapter:EA documentation in an insurance company} 
+%\chapter{Case study}\label{chapter:EA documentation in an insurance company} 
 % IST-Analyse
 % EA documentation in an insurance company
 
-This chapter introduces in the first section the case study. The second section will explain the factors that influence the IT landscape of the insurance company. These are divided into internal and external factors. In the next section~\ref{section:asislandscape} the IT landscape is explained. The current method of the EA documentation process in the insurance company is explained. The EAD process was conducted during this  master-thesis.
+This chapter introduces in the first section the evaluation of the implemented prototype in a case study. The second section will explain the factors that influence the IT landscape of the insurance company. These are divided into internal and external factors. In the next section~\ref{section:asislandscape} the IT landscape is explained. The current method of the EA documentation process in the insurance company is explained. The EAD process was conducted during this  master-thesis.
 In the following section~\ref{section:targetitlandscape} the target IT landscape will be described.
 At the end of this chapter in section~\ref{section:derivedrequirements}, the derived requirements to automated the EA relevant information collection process will be presented to introduce the new approach for an automated EAD.
 
@@ -16,7 +16,7 @@ The case study was conducted according to the research methodology for software 
 
 \subsection{Case study objectives}\label{subsection:casestudyobjectives}
 
-This case will identify the current practice and the challenges regarding the EAD process in a german insurance company. To goal of the case study is to derive requirements for an automated EAD process and compare these with the findings of the literature research to improve to develop an automated process out of the requirements.
+This case will identify the current practice and the challenges regarding the EAD process in a german insurance company. The case study evaluated the suggested solution of an automated EAD process and its prototype derived from the requirements found out during the literature research. To improve the solution the prototype was evaluated in the company to derive further requirements for an automated EAD.
 
 \subsection{Case study definition}\label{subsection:casestudyobjectives}
 
@@ -155,7 +155,6 @@ Relevant for the EAM are the other repositories depicted in the picture. Other r
 \subsection{Current EA documentation}\label{subsection:currentead}
 
 The EAD integrates several tools as shown in figure \hl{XXX}. 
-
 \subsubsection{Excel import}
 
 The first EA documentation process was driven by the external mentioned ISO 22301 standard. The enterprise decided to collect the information about the IT landscape. The usage of Microsoft Excel sheets for keeping data is still important for enterprises since many organizations still rely on them for information storing.\hl{}
@@ -187,7 +186,11 @@ To enable the collaboration and knowledge sharing of the employees knowledge a W
 
 As we can see in picture \hl{XXX} there is no integration of the applications running on the cloud-based environments. There is no defined process of the EAD of applications deployed to the cloud.
 
-\section{Target IT Landscape}\label{section:targetitlandscape}
+\subsubsection{PPM Tool integration}
+
+As figure \hl{XXX} shows, there is no integration of a PPM Tool.
+
+\section{Target IT landscape}\label{section:targetitlandscape}
 
 This section will explain the target IT landscape of the company. The target IT landscape is mainly driven by the concerns. The following picture shows the target IT landscape.
 
@@ -259,19 +262,19 @@ In the previous sections the as-is and target landscape of an insurance company 
     \toprule
       Id & Requirement\\
     \midrule
-      RC1 & Business Impact Analysis of applications\\
-      RC2 & Data privacy compliance\\
-      RC3 & Integration of a PPM tool\\
-      RC4 & Integration of other repositories\\
-      RC5 & Integration of cloud infrastructure\\
-      RC6 & Integration of a monitoring tool\\
+      %RC1 & Business Impact Analysis of applications\\
+      %RC2 & Data privacy compliance\\
+      RC1 & Integration of a PPM tool\\
+      RC2 & Integration of other repositories\\
+      RC3 & Integration of cloud infrastructure\\
+      RC4 & Integration of a monitoring tool\\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\textbf{RC1}: A Business Impact Analysis of applications is not only required by the enterprise, it is also required due to regulations. The enterprise can analyze in case of a sinister what applications are affected and which related systems are implied by a failure. It can quantify the economic impact of failures.
+%\textbf{RC1}: A Business Impact Analysis of applications is not only required by the enterprise, it is also required due to regulations. The enterprise can analyze in case of a sinister what applications are affected and which related systems are implied by a failure. It can quantify the economic impact of failures.
 
-\textbf{RC2}: Tools have to be compliant with the data privacy regulation. An enterprise needs to know what applications store personal data. 
+%\textbf{RC2}: Tools have to be compliant with the data privacy regulation. An enterprise needs to know what applications store personal data. 
 
 \textbf{RC3}: The integration of a PPM tool is desired by the enterprise to relate projects to applications.
 
@@ -288,15 +291,15 @@ In the previous sections the as-is and target landscape of an insurance company 
 %top down architecture greefhorst und proper
 %architetkruprinzipien meistens auf confluence, copas
 
-
-
 %bei architekturüberprüfung gesamt architektur (12factorapp) für konzept oder prototyp
 
 %sozialen druck, transparenz für 12 factors, belt
 %aier2018: regeln, steuerung und gehorsam oder "einfach mal laufen lassen
 %nudging? - shun long hong
-%
 
+\section{Solution architecture}\label{section:solutionarchitecture}
+
+\section{Prototype evaluation}\label{section:solutionarchitecture}
 
 
 
