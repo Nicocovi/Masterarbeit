@@ -129,7 +129,7 @@ The information sources correspond to the tools used by the participants of the 
 \subsubsection{Network Scanners and Monitors}
 %include source [4] of farwick 2013
 The most common potential information source for an automated EAD are Network Scanners and Monitors. Operations teams often use these sources to monitor the infrastructure and its performance. As analyzed in the survey more than 60 percent of all organizations use Network Scanners.
-Relevant data for network scanners are servers, applications and databases. However, the data gathered from this sources is too granular. The data can then not me mapped to the EA meta model. Nonetheless the correctness and the actuality of the data are considered positive. Since network scanners cannot cover all technologies the quality  of the collected data is worst of all information sources.
+Relevant data for network scanners are servers, applications and databases. However, the data gathered from this sources is too granular. The data can then not be mapped to the EA meta model. Nonetheless the correctness and the actuality of the data are considered positive. Since network scanners cannot cover all technologies the quality  of the collected data is worst of all information sources.
 
 \subsubsection{Configuration Management Database}
 Configuration Management Databases (CMDBs) are databases that store relevant information about hardware instances used in an organization's IT services and the relationships between those instances and the related incidents at an operational level.\hl{ITIL}
@@ -178,7 +178,7 @@ Another problem regarding the tool is the maintenance of the EA model. Most of t
 
 \subsubsection{Data challenges}
 As mentioned already several times, most organizations collect EA data manually. This is the biggest challenge regarding EAD. Due to the problems integrating the information sources, the amount of information that needs to be collected is immense. The data sources contain information on different granularity levels and the transformation of this data is a complicated process.
-Collecting EA data manually is a very time consuming and therefore an expensive taks. Since the collection process is performed manually the odds of producing high error rated data is very high. This concludes with inconsistent and redundant data. \hl{Buschle 2012}
+Collecting EA data manually is a very time consuming and therefore an expensive task. Since the collection process is performed manually the odds of producing high error rated data is very high. This concludes with inconsistent and redundant data. \hl{Buschle 2012}
 
 \subsubsection{EA Governance}
 The lack of governance is also a very important aspect when documenting the enterprise architecture. In most organizations the absence of governance is a major issue since there are no governance guidelines and principles respecting EAD.
@@ -206,7 +206,7 @@ These technology trends have nowadays an impact on EAM. How to integrate these t
 
 \subsection{Agile development and Continuous Practices}
 
-During the last decade some development methodologies have emerged and gained an important role for enterprises.We can sum the two previous definitions to the term continuous practices.
+During the last decade some development methodologies have emerged and gained an important role for enterprises. We can sum the two following definitions to the term "continuous practices". The combination of agile development and EAM was research by Canat et al. \hl{Canat} and is possible. However, the main challenge is the lack of communication between enterprise architects and developers and that should increase the collaboration.\hl{Canat}
 
 \subsubsection{Agile development}
 "Agile methodologies emphasize rapid and flexible development. The main characteristics of agile development are short releases, flexibility, and minimal documentation". \hl{Less is more 2013}
@@ -225,11 +225,12 @@ increase their teams' productivity [4]. This practice includes
 automated software building and testing [5]."\hl{Chen 2015}
 
 \subsubsection{Impact of agile development and continuous practices on EA}
-EAM follows a top-down approach derived from the goals and strategy of the enterprise. However, agile development is used on a project-level. This level is more granular since the project is decomposed into requirements. This is due to the short-term planning of the project increasing the dynamic of the project being able to change requirements faster and enabling a quicker time-to-market. Therefore it leads to shorter life cycles. This does not mean that due to the short amount of time between these cycles agile teams do not document. On the contrary, teams need to document their results in detail since its not always ensured that the same team will still work on the projects.
+EAM follows a top-down approach derived from the goals and strategy of the enterprise. \hl{Hanschke} However, agile development is used on a project-level. This level is more granular since the project is decomposed into requirements. This is due to the short-term planning of the project increasing the dynamic of the project being able to change requirements faster and enabling a quicker time-to-market. Therefore it leads to shorter life cycles. This does not mean that due to the short amount of time between these cycles agile teams do not document. On the contrary, teams need to document their results in detail since its not always ensured that the same team will still work on the projects.
+%21,22,42
 
 The documentation of agile teams is too granular for EAM. Integrating these two perspectives would lead to a more dynamic EA since it would focus more on the collaboration with the agile development of a project and would benefit of the resulting documentation of the agile teams. 
 
-EAM would not be perceived as an 'ivory tower' while working together with the agile teams and it would take the advantage of cooperating with the teams to how these projects influecen the To-Be IT landscape and if these projects ensure follow IT Governance rules, guidelines and compliance. \hl{Sebastian hanschke 2015}
+EAM would not be perceived as an 'ivory tower' while working together with the agile teams and it would take the advantage of cooperating with the teams to how these projects influence the To-Be IT landscape and if these projects ensure follow IT Governance rules, guidelines and compliance. \hl{Sebastian hanschke 2015}
 
 \subsection{Cloud Computing}
 
@@ -245,7 +246,7 @@ One of the reasons for moving to the cloud is to reduce the total cost of owners
 
 "A microservices architecture is a cloud-native architecture that aims to realize software systems as a package of small services. Each service is independently deployable on a potentially different platform and technological stack. It can run in its own process while communicating through lightweight mechanisms such as RESTful or RPC-based APIs." \hl{Microservices Architecture Enables DevOps}
 
-As mentioned before migrating legacy systems to the cloud is one of the main reasons. However the migration of monolithic architecture means changing the architecture to a microservice architecture. The main problem of a microservice architecture is the very large number of small structures like microservices running on a cloud-based environment which leads to an increased complexity of the IT landscape. The high degree of heterogeneity of these structures also increments the complexity.
+As mentioned before migrating legacy systems to the cloud is one of the main reasons. However, the migration of monolithic architecture means changing the architecture to a microservice architecture. The main problem of a microservice architecture is the very large number of small structures running on a cloud-based environment which leads to an increased complexity of the IT landscape. The high degree of heterogeneity of these structures also increments the complexity.
 On the other hand, the migration produces many advantages.
 As already mentioned the main advantage of having a microservice architecture the ability to reduce the time-to-market and also the adaptability to change the technology stack of small structures to avoid technological lock-ins.\hl{Microservices Architecture Enables DevOps}
 
@@ -255,7 +256,7 @@ Establishing a connection between cloud computing and EAM would solve the time c
 
 \subsection{Monitoring}
 
-As mentioned above the complexity of the IT landscape increases due to the challenges named. The raises the need for monitoring and analyzing tool. Monitoring the performance of applications affects in many ways. Application Monitoring (AM) tools, such as Dynatrace, brings many benefits to the enterprises. The AM tools not only deliver metrics about the system health, the consumption of the computing resources of the platform, they also deliver many other thousands of metrics such as response time, http calls, failure rates, etc. \hl{Tilmann Rabl 2012}
+As mentioned above the complexity of the IT landscape increases due to the challenges named. This raises the need for monitoring and analyzing tool. Monitoring the performance of applications affects in many ways. Application Monitoring (AM) tools, such as Dynatrace, brings many benefits to the enterprises. The AM tools not only deliver metrics about the system health, the consumption of the computing resources of the platform, they also deliver many other thousands of metrics such as response time, http calls, failure rates, etc. \hl{Tilmann Rabl 2012}
 
 \subsubsection{Impact on EA}
 Extending the EA context with application monitoring metrics allows EAM to derive new information. \hl{Frank} recommended the synchronization of perfomance indicators at runtime level or indicator systems with the EAM view \hl{Frank, Farwick 2010}. Retrieving metrics such as open connections, latency and the number of cores in the host CPUs led to congestion and decreased the performance of the system. Applying this knowledge, the system can be configured to perform better. \hl{Tilmann Rabl 2012} The analysis of the measurements of AM tools is applicable to more use cases such as  on-line advertisement marketing, click stream storage, and power monitoring. \hl{Tilmann Rabl 2012}

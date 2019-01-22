@@ -6,9 +6,12 @@
 % IST-Analyse
 % EA documentation in an insurance company
 
-This chapter introduces in the first section the evaluation of the implemented prototype in a case study. The second section will explain the factors that influence the IT landscape of the insurance company. These are divided into internal and external factors. In the next section~\ref{section:asislandscape} the IT landscape is explained. The current method of the EA documentation process in the insurance company is explained. The EAD process was conducted during this  master-thesis.
+The first section of this chapter introduces the methodology of the case study. 
+%The case study design is a research methodology the evaluation of the implemented prototype in a case study.
+The second section will explain the factors that influence the IT landscape of the insurance company. These are divided into internal and external factors. In the next section~\ref{section:asislandscape} the current IT landscape of the enterprise is described. In addition to the as-is IT landscape, the current process of the EA documentation in the insurance company was analyzed during this master-thesis. 
 In the following section~\ref{section:targetitlandscape} the target IT landscape will be described.
-At the end of this chapter in section~\ref{section:derivedrequirements}, the derived requirements to automated the EA relevant information collection process will be presented to introduce the new approach for an automated EAD.
+In section~\ref{section:derivedrequirements}, the derived requirements to automate the EAD process will be presented.
+At the end of this chapter the prototype is evaluated.
 
 \section{Case Study Design}\label{section:casestudy}
 
@@ -134,8 +137,8 @@ This section will described the IT landscape of the company. The following pictu
 
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/as-is-it-landscape.png}
-  \caption{ AS-IS IT landscape~\parencite{Corpancho Villasana 2018}}
+  \includegraphics[width=1.0\textwidth]{figures/as-is-it-landscape.png}
+  \caption{ AS-IS IT landscape}
   \label{fig:AS-IS IT landscape}
 \end{figure}
 
@@ -154,7 +157,7 @@ Relevant for the EAM are the other repositories depicted in the picture. Other r
 
 \subsection{Current EA documentation}\label{subsection:currentead}
 
-The EAD integrates several tools as shown in figure \hl{XXX}. 
+The EAD integrates several tools as shown in figure~\ref{fig:AS-IS IT landscape}. 
 \subsubsection{Excel import}
 
 The first EA documentation process was driven by the external mentioned ISO 22301 standard. The enterprise decided to collect the information about the IT landscape. The usage of Microsoft Excel sheets for keeping data is still important for enterprises since many organizations still rely on them for information storing.\hl{}
@@ -165,7 +168,7 @@ The continuation of the project is mainly driven by the VAIT regulation since en
 
 \subsubsection{Integration of the CMDB}
 % Pasarlo a current EA docu?
-Due to the BCM regulation mentioned in section~\ref{section:internalinfluencingfactors}, an integration between the EA tool and the CMDB was implemented. The EA tool integrates data from the CMDB. The application developed for the integration retrieved data from the CMDB and imports the data to the EA tool in regular intervals. The import is was unidirectional. Only Business Services were imported from the CMDB. No infrastructure data was integrated into the EA tool. The import did not analyze the data, meaning that if the imported data was redundant there was no merge conflict solved. The integration was developed to improve these challenges. The Integration on the CMDB contains now a conflict solution and harmonizes the redundant imported applications with a unique identifier. The import mechanism also differentiates between a flag set in the CMDB metamodel to import the business services as an application or a technical components. This differentiation is done because in the CMDB everything was modeled as a business service.
+Due to the BCM regulation mentioned in section~\ref{subsection:internalinfluencingfactors}, an integration between the EA tool and the CMDB was implemented. The EA tool integrates data from the CMDB. The application developed for the integration retrieved data from the CMDB and imports the data to the EA tool in regular intervals. The import is was unidirectional. Only Business Services were imported from the CMDB. No infrastructure data was integrated into the EA tool. The import did not analyze the data, meaning that if the imported data was redundant there was no merge conflict solved. The integration was developed to improve these challenges. The Integration on the CMDB contains now a conflict solution and harmonizes the redundant imported applications with a unique identifier. The import mechanism also differentiates between a flag set in the CMDB metamodel to import the business services as an application or a technical components. This differentiation is done because in the CMDB everything was modeled as a business service.
 
 This integration was the pilot integration project for information sources to the existing EA tool. Further integrations of different information sources will be implemented due to the successful development of this integration.
 
@@ -184,11 +187,11 @@ To enable the collaboration and knowledge sharing of the employees knowledge a W
 
 \subsubsection{Cloud integration}
 
-As we can see in picture \hl{XXX} there is no integration of the applications running on the cloud-based environments. There is no defined process of the EAD of applications deployed to the cloud.
+As illustrated in figure~\ref{fig:AS-IS IT landscape} there is no integration of the applications running on the cloud-based environments. There is no defined process of the EAD of applications deployed to the cloud.
 
 \subsubsection{PPM Tool integration}
 
-As figure \hl{XXX} shows, there is no integration of a PPM Tool.
+As figure~\ref{fig:AS-IS IT landscape} shows, there is no integration of a PPM Tool. Projects and business information can not be aligned to applications during the EAD.
 
 \section{Target IT landscape}\label{section:targetitlandscape}
 
@@ -196,8 +199,8 @@ This section will explain the target IT landscape of the company. The target IT 
 
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=0.8\textwidth]{figures/target-it-landscape.png}
-  \caption{ Target IT landscape~\parencite{Corpancho Villasana 2018}}
+  \includegraphics[width=1.0\textwidth]{figures/target-it-landscape.png}
+  \caption{ Target IT landscape}
   \label{fig:Target IT landscape}
 \end{figure}
 
@@ -221,27 +224,27 @@ The insurance company is divided into several subsidiaries around the world.The 
 
 \subsubsection{Cloud integration}
 
-As shown in picture \hl{XXX} the applications running on the cloud-based environments will be integrated to the EA tool. The main driver for this integration is the VAIT regulation. As mentioned in the regulation, an insurance company has to be able to deliver an application inventory of the IT landscape. That includes also applications running on private enterprise clouds. 
+As shown in figure~\ref{fig:Target IT landscape} the applications running on the cloud-based environments will be integrated to the EA tool. The main driver for this integration is the VAIT regulation. As mentioned in the regulation, an insurance company has to be able to deliver an application inventory of the IT landscape. That includes also applications running on private enterprise clouds. 
 
 In the context of the cloud migration project a new defined process for the deployment of the new developed applications was introduced. The major goal of this defined process is to establish a standardized process for agile teams. The process is divided into a build process and a deployment process.
 
 \begin{figure}[htpb]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/build-process.PNG}
-  \caption{ Build process~\parencite{Corpancho Villasana 2018}}
+  \caption{ Build process}
   \label{fig:Build-process}
 \end{figure}
 
-The build process is shown in picture \hl{XXX}. The DevOps team first checks out the latest state of the code from the version control service (VCS). After developing the team commits and pushes the new state back to the VCS repository. The CD tool is constantly monitoring the repository to track changes in the code. If new changes are tracked, the CD tool automatically builds an artifact of the repository and registers the artifact into the binary repository manager tool. That means the built artifact is hosted in the tools and can be downloaded from it.
+The build process is shown in figure~\ref{fig:Build-process}. The DevOps team first checks out the latest state of the code from the version control service (VCS). After developing the team commits and pushes the new state back to the VCS repository. The CD tool is constantly monitoring the repository to track changes in the code. If new changes are tracked, the CD tool automatically builds an artifact of the repository and registers the artifact into the binary repository manager tool. That means the built artifact is hosted in the tools and can be downloaded from it.
 
 \begin{figure}[htpb]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/deployment-process.PNG}
-  \caption{ Deployment process~\parencite{Corpancho Villasana 2018}}
+  \caption{ Deployment process}
   \label{fig:Deployment-process}
 \end{figure}
 
-The second part of the defined process is the deployment process as shown in picture \hl{XXX}. The DevOps team triggers manually the deployment process within the CD tool. The tool downloads the latest pushed artifact of the binary repository manager. After downloading the artifact, it build automatically a container out of the artifact. The CD tool pushed then the container to the cloud.
+The second part of the defined process is the deployment process as shown in figure~\ref{fig:Deployment-process}. The DevOps team triggers manually the deployment process within the CD tool. The tool downloads the latest pushed artifact of the binary repository manager. After downloading the artifact, it build automatically a container out of the artifact. The CD tool pushed then the container to the cloud.
 
 The first approach for a documentation process of the applications running on a cloud-based environment is the establishment of a defined process and a toolchain for building and deploying to the cloud infrastructure. Every application is tracked in the binary repository manager but there is still no integration of the cloud application inventory to the EA tool.
 
@@ -256,7 +259,7 @@ The business benefits of monitoring tools for the enterprise are many. One of th
 In the previous sections the as-is and target landscape of an insurance company were presented. These sections cover various aspects of the EAD within the studied company. The case study shows different outlooks for future integrations. From the introduced case study, requirements can be derived for for an automated EAD. The following table presents the derived requirements:
 
 \begin{table}[htpb]
-  \caption[Automated EAD requirements derived from the case study]{Automated EAD requirements derived the case study}\label{tab:sample}
+  \caption[Automated EAD requirements derived from the case study]{Automated EAD requirements derived the case study}\label{tab:casestudyrequirements}
   \centering
   \begin{tabular}{l l l}
     \toprule
@@ -265,7 +268,7 @@ In the previous sections the as-is and target landscape of an insurance company 
       %RC1 & Business Impact Analysis of applications\\
       %RC2 & Data privacy compliance\\
       RC1 & Integration of a PPM tool\\
-      RC2 & Integration of other repositories\\
+      RC2 & Integration of different information sources\\
       RC3 & Integration of cloud infrastructure\\
       RC4 & Integration of a monitoring tool\\
     \bottomrule
@@ -276,13 +279,59 @@ In the previous sections the as-is and target landscape of an insurance company 
 
 %\textbf{RC2}: Tools have to be compliant with the data privacy regulation. An enterprise needs to know what applications store personal data. 
 
-\textbf{RC3}: The integration of a PPM tool is desired by the enterprise to relate projects to applications.
+\textbf{RC1}: The integration of a PPM tool is desired by the enterprise to relate projects to applications.
 
-\textbf{RC4}: An integration of other repositories is required by the enterprise to relate information and propagate information sharing.
+\textbf{RC2}: An integration of different information sources is required by the enterprise to relate information and propagate information sharing.
 
-\textbf{RC5}: The integration of cloud infrastructure is needed due to a full application inventory required by law and due to strategic decisions as migrating to cloud infrastructure.
+\textbf{RC3}: The integration of cloud infrastructure is needed due to a full application inventory required by law and due to strategic decisions as migrating to cloud infrastructure.
 
-\textbf{RC6}: An integration of a monitoring tool is planned at the enterprise to increase the reaction time between the failure of a system and the enterprise. Thus, the monetary impact can reduced.
+\textbf{RC4}: An integration of a monitoring tool is planned at the enterprise to increase the reaction time between the failure of a system and the enterprise. Thus, the monetary impact can reduced.
+
+The requirements from the insurance company  can be aligned to the requirements derived during the literature research. \textbf{RC1} and \textbf{RC2} can be mapped to \textbf{RL1} since the requirements propose the integration of different information sources. \textbf{RC1} is just a special requirement of the integration of various data sources. \textbf{RC3} and \textbf{RL5} can be aligned since both requirements demand an integration of cloud environments. \textbf{RC4} and \textbf{RL6} require an enhancement of runtime KPIs through monitoring tools.
+In summary, the enterprise requirements can be aligned to the findings of the literature research and the respective derived requirements. 
+
+\section{Case study evaluation}\label{section:solutionarchitecture}
+
+This section will evaluate the implemented prototype of chapter~\ref{chapter:prototype implementation} within the studied enterprise. The first subsection will introduce the methodology and the overall goal of the evaluation. The second subsection will present the results of the prototype evaluation.
+
+\subsection{Evaluation goal and methodology}
+%TODO:
+
+
+Table~\ref{tab:interviewedindustrypartners} shows the interviewed industry partners, their roles and the years of experience as enterprise architects or product owners. The table shows that the maturity of most of the interviewed enterprise architects is high. Different to the product owners, most of the product owners were not that experienced but could deliver some innovative ideas.
+
+\begin{table}[htpb]
+  \caption[Interviewed industry partners evaluation]{Interviewed industry partners evaluation}\label{tab:interviewedindustrypartners}
+  \centering
+  \begin{tabular}{l l l l}
+    \toprule
+      No & Pseudonym & Role & Years of experience\\
+    \midrule
+      1 & EA1 & Enterprise Architect and Chief Architect & 20\\ %Hansrudi
+      2 & EA2 & Enterprise Architect & 2\\ %Christina
+      3 & EA3 & Enterprise Architect & 17\\ %Kai
+      4 & EA4 & Enterprise Architect and Product Owner & 10\\ %Martin
+      5 & EA5 & Enterprise Architect & \hl{6?} \\ %Matheus
+      6 & EA6 & Enterprise Architect and IT Management Expert & 20\\ %Monika
+      7 & EA7 & Enterprise Architect & 18\\ %Wolfram
+      8 & PO1 & Product Owner and Head of Product Architecture & 11\\ %Christoph
+      9 & PO2 & Product Owner& 1 \\ %Max
+      10 & PO3 & Product Owner& 3 \\ %Simon
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Tool evaluation}
+
+Figure~\ref{fig:solution-architecture-prototype} shows solution architecture of the prototype in the current IT environment of the insurance company.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{figures/solution_architecture-prototype.png}
+  \caption{Solution architecture of the prototype in the current IT landscape of the enterprise}
+  \label{fig:solution-architecture-prototype}
+\end{figure}
+
 %BIA
 %Migration derivations
 %cloud documentation process definition: define process how to document apps.
@@ -296,14 +345,6 @@ In the previous sections the as-is and target landscape of an insurance company 
 %sozialen druck, transparenz für 12 factors, belt
 %aier2018: regeln, steuerung und gehorsam oder "einfach mal laufen lassen
 %nudging? - shun long hong
-
-\section{Solution architecture}\label{section:solutionarchitecture}
-
-\section{Prototype evaluation}\label{section:solutionarchitecture}
-
-
-
-
 
 
 

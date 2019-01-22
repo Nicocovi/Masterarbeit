@@ -13,7 +13,59 @@
   \vspace{5mm}
   {\large\MakeUppercase{\getUniversity{}}}\\
 
-  \vspace{20mm}
+  \vspace{15mm}
+  {\Large \getDoctype{}}
+
+  \makeatletter
+  \vspace{15mm}
+  \ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+  {
+  {\LARGE\bfseries \getTitle{}}
+
+  \vspace{10mm}
+  {\LARGE\bfseries \foreignlanguage{ngerman}{\getTitleGer{}}}
+  }
+  {
+  {\LARGE\bfseries \getTitleGer{}}
+
+  \vspace{10mm}
+  {\LARGE\bfseries \foreignlanguage{english}{\getTitle{}}}
+  }
+  \makeatother
+
+  \vspace{15mm}
+  \begin{tabular}{l l}
+    Author:          & \getAuthor{} \\
+    Supervisor:      & \getSupervisor{} \\
+    Advisor:         & \getAdvisor{} \\
+    Submission Date: & \getSubmissionDate{} \\
+  \end{tabular}
+
+  \IfFileExists{logos/faculty.png}{%
+    % \vfill{}
+    \vspace{10mm}
+    \includegraphics[height=20mm]{logos/faculty.png}
+  }{}
+\end{titlepage}
+
+%VORLAGE:
+\begin{comment}
+\begin{titlepage}
+  \centering
+
+  \IfFileExists{logos/tum.pdf}{%
+    \includegraphics[height=20mm]{logos/tum.pdf}
+  }{%
+    \vspace*{20mm}
+  }
+
+  \vspace{5mm}
+  {\huge\MakeUppercase{\getFaculty{}}}\\
+
+  \vspace{5mm}
+  {\large\MakeUppercase{\getUniversity{}}}\\
+
+  \vspace{15mm}
   {\Large \getDoctype{}}
 
   \vspace{15mm}
@@ -30,8 +82,10 @@
     Submission Date: & \getSubmissionDate{} \\
   \end{tabular}
 
-  \IfFileExists{logos/faculty.pdf}{%
-    \vfill{}
-    \includegraphics[height=20mm]{logos/faculty.pdf}
+  \IfFileExists{logos/faculty.png}{%
+    %\vfill{}
+    \includegraphics[height=20mm]{logos/faculty.png}
   }{}
+  
 \end{titlepage}
+\end{comment}

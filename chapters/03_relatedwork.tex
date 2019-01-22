@@ -1,18 +1,19 @@
-\chapter{Related work}\label{chapter:related work}
+\chapter{Related work}\label{chapter:relatedwork}
 
-This work will target automation of the documentation use case trying to improve the strategic analysis with the help of application monitoring as a result of the automated EAD. First this chapter will present different solution approaches related to automated EAD. Then the different proposed solutions will be compared and evaluated. 
+This work will target the automation of the documentation use case trying to improve the strategic analysis with the help of application monitoring as a result of the automated EAD. First this chapter will present different solution approaches related to automated EAD. Then the different proposed solutions will be compared and evaluated. 
 
 %Hauder 2012 - Challenges for automated enterprise architecture documentation
-\hl{Hauder 2012} describes the EA documentation process as very time consuming, error-prone and a process that requires a lot of manual effort. Inspired by these challenges Hauder examines the further challenges for an automated EAD investigating model transformations from various information sources, conducted a survey among 123 EA practitioners and incorporated a literature review. The discovered problems among EAD were grouped into four categories. The main challenge of the first category data is the appropriate selection of a relevant EA information source and the data quality retrieved. The second category identifies is transformation. It reports the problems regarding the alignment and maintenance of data from diverse information source to a central repository. The third category business and organization deals with the question of the added value of an automated process and what the impact to the organizational structure is. The last category describes the challenges related to the tool. 
+\hl{Hauder 2012} describes the EA documentation process as very time consuming, error-prone and a process that requires a lot of manual effort. Inspired by these challenges Hauder examines the further challenges for an automated EAD investigating model transformations from various information sources, conducted a survey among 123 EA practitioners and incorporated a literature review. The discovered problems among EAD were grouped into four categories. The main challenge of the first category data is the appropriate selection of a relevant EA information source and the data quality retrieved. The second category identified is transformation. It reports the problems regarding the alignment and maintenance of data from diverse information sources to a central repository. The third category business and organization deals with the question of the added value of an automated process and what the impact to the organizational structure is. The last category describes the challenges related to the tool. 
 
 %Farwick 2013 - Enterprise Architecture Documentation: Empirical Analysis of Information Sources for Automation
-A survey conducted by \hl{Farwick 2013} reveals more details about the  status quo of EA documentation processes in organizations, which information sources can be used to obtain relevant EA information, what integration problems exist for these information sources and What data quality, actuality, completeness, correctness and correct granularity, can be expected from them. The survey presents a list with the possible information sources and the expected data quality. The survey declares that the gap between the retrieved data and the EA model prevents enterprises for automating the documentation process due to the granularity and the difficulties mapping the data to the EA model.
+A survey conducted by \hl{Farwick 2013} reveals more details about the  status quo of EA documentation processes in organizations, which information sources can be used to obtain relevant EA information, what integration problems exist for these information sources and what data quality attributes like data actuality,  data completeness, data correctness and the granularity level of the data, can be expected from them. The survey presents a list with the possible information sources and the expected data quality attributes. The survey declares that the gap between the retrieved data and the EA model prevents enterprises for automating the documentation process due to different granularity levels and the difficulties mapping the data to the EA model.
 
 %Roth 2013 - Enterprise Architecture Documentation: Current Practices and Future Directions 
-\hl{Roth 2013} reaffirms the struggle of the organizations regarding the EA documentation process with an empirical evaluation on the application of this process. The survey implies the EAD of 140 organizations to validate the challenges mentioned in literature. The work derives future research directions from the findings and gives an overview of the currently applied techniques in EAD. These are compared to literature to validate the hypotheses regarding EAD.
+\hl{Roth 2013} reaffirms the struggle of the organizations regarding the EA documentation process with an empirical evaluation on the application of this process. The survey implies the EAD of 140 organizations to validate the challenges mentioned by Hauder et al. and by Farwick et al.\hl{Hauder, Farwick} The work derives future research directions from the findings and gives an overview of the currently applied techniques in EAD. 
+%These are compared to literature to validate the hypotheses regarding EAD.
+
 
 %Microservices Architecture Enables DevOp
-
 % Welche Lösungsansätze gibt es bereits
 % Comparisson der Ansätze
 % Comments: show IT, wie wird das erfasst?
@@ -21,19 +22,19 @@ A survey conducted by \hl{Farwick 2013} reveals more details about the  status q
 \subsubsection{Farwick 2010}
 %TowardsLivingLandscapeModels:AutomatedIntegrationofInfrastructureCloud inEnterpriseArchitectureManagement
 
-Farwick proposes in his work that cloud infrastructure should be documented in an EA model to increase the understanding between the cloud infrastructure in relation to other business information systems and finally to the overall business goals. The purpose of the publication is to present an approach how to consolidate runtime information of different information sources such as a cloud environment to an EAM view. Farwick presents a conceptual approach and a prototypical implementation using the open-source cloud infrastructure Eucalyptus as well as the open-source EAM tool Iteraplan. The automated approach of Farwick integrates different information sources in a central model, which updates the model, verifies the information and pushes the new information to the EAM tool. The publication proposes as a future work taking into consideration the integration of other cloud service models like PaaS and SaaS for the usage of generic APIs for standardization purposes. The synchronization problems with other information sources and the development of the central model and the metamodel is presented as future research. Since the installation of agents for monitoring the different information sources is an intensive work. \hl{Farwick 2010}
+Farwick et al. proposes in his work that cloud infrastructure should be documented in an EA model to increase the understanding between the cloud infrastructure in relation to other business information systems and finally to the overall business goals. The purpose of the publication is to present an approach how to consolidate runtime information of different information sources such as cloud environments to an EAM view. The work presents a conceptual approach and a prototypical implementation using the open-source cloud infrastructure Eucalyptus as well as the open-source EAM tool Iteraplan. The automated approach of Farwick et al. integrates different information sources in a central model, which updates the model, verifies the information and pushes the new information to the EAM tool. The publication proposes as a future work taking into consideration the integration of other cloud service models like PaaS and SaaS for the usage of generic APIs for standardization purposes. The synchronization problems with other information sources and the development of the central model and the metamodel are presented as future research due to the intensive work of the installation of agents for monitoring the different information sources. \hl{Farwick 2010}
 
 \subsubsection{Buschle  2012}
 %Automating Enterprise Architecture Documentation using an Enterprise Service Bus
-The presented approach of \hl{Buschle 2012} examines a specific Enterprise Service Bus (ESB) in an enterprise for interlinking business applications and processes as information sources. The transformation rules for the data are used to apply an automated EA documentation. The evaluation of the approach was carried out whit a productive ESB in an enterprise in the fashion industry.
+The presented approach of Buschle et al. examines a specific Enterprise Service Bus (ESB) in an enterprise for interlinking business applications and processes as information sources. The transformation rules for the data are used to apply an automated EA documentation. The evaluation of the approach was carried out with a productive ESB in an enterprise in the fashion industry. \hl{Buschle 2012}
 
 \subsubsection{Holm  2014}
 %Automatic data collection for enterprise architecture models
-Holm presents recommends using a network scanner for the automated process of data collection for producing EA models based on the IT infrastructure of enterprises. Manual effort is still required to make the models completely valuable. The results were evaluated empirically and demonstrate an accurate outcome with little effort.\hl{Holm 2014}
+Holm et al. recommends using a network scanner for the automated process of data collection for producing EA models based on the IT infrastructure of enterprises. Manual effort is still required to make the models completely valuable. The results were evaluated empirically and demonstrate an accurate outcome with little effort.\hl{Holm 2014}
 
 \subsubsection{Välja 2015}
 %  A requirements based approach for automating enterprise it architecture modeling using multiple data sources
-The work of \hl{Valja 2015} describes how to automate the process of EA modeling. The information is retrieved from different data sources using common data processing methods. The work shows that challenges of manual modeling can be overcome and data quality issues can be solved. The approach shows that it is possible to create automatically enterprise IT architecture models that are timely and scaleable.
+The work of Välja et al. describes how to automate the process of EA modeling. The information is retrieved from different data sources using common data processing methods. The work shows that challenges of manual modeling can be overcome and data quality issues can be solved. The approach shows that it is possible to create automatically enterprise IT architecture models that are timely and scaleable.\hl{Valja 2015}
 
 \subsubsection{Farwick 2016}
 %A situational method for semiautomated enterprise architecture documentation
@@ -51,9 +52,9 @@ For further evaluation of the approach it is necessary to examine the work on a 
 
 \subsubsection{Bogner 2016}
 % Towards Integrating Microservices with Adaptable Enterprise Architecture
-Bogner et al. \hl{Bogner 2016} examines methodologies to integrate the growing amount of small structures like microservices, Internet of Things and mobility services that are emerging in today's IT environments. Micro-granular architectures increase the degree of heterogeneity of enterprise's IT landscapes and thus hinder classical EAM approaches to deal with the diversity and distribution presented in this architecture landscapes. The work enlarge EA methodologies by extending earliest reference metamodels with elements for a more adaptable models and EA-mini-descriptions. The EA-mini-descriptions provide an adaptable metamodel for the microservices and the descriptions can be grouped to form superordinated entities. It also proposes that an EA approach should should integrate small structures to enable a holistic view and should be flexible. The main intention of the paper is to identify adaptability issues of microservice architectures and to present a different approach than classical EAM approaches. The development of a prototype and the evaluation and validation of the results in practical use cases is requested as future research.
+Bogner et al. \hl{Bogner 2016} examines methodologies to integrate the growing amount of small structures like microservices, Internet of Things and mobility services that are emerging in today's IT environments. Micro-granular architectures increase the degree of heterogeneity of enterprise's IT landscapes and thus hinder classical EAM approaches to deal with the diversity and distribution presented in the architecture landscapes. The work enlarge EA methodologies by extending earliest reference metamodels with elements for a more adaptable models and EA-mini-descriptions. The EA-mini-descriptions provide an adaptable metamodel for the microservices and the descriptions can be grouped to form superordinated entities. It also proposes that an EA approach should should integrate small structures to enable a holistic view and should be flexible. The main intention of the paper is to identify adaptability issues of microservice architectures and to present a different approach than classical EAM approaches. The development of a prototype and the evaluation and validation of the results in practical use cases is requested as future research.
 
-\section{Derivation of requirements}
+\section{Derivation of requirements}\label{subsection:derivationofrequirements}
 
 %Derivation of requirements for automated approach
 % 1. Dynamic metamodel
@@ -64,7 +65,7 @@ Bogner et al. \hl{Bogner 2016} examines methodologies to integrate the growing a
 In the previous section the different approaches were presented. These cover various aspects of EAD and have different outlooks for future works. From the introduced approaches and their respective problems, requirements can be derived for future solutions regarding automated EAD. The following table presents the derived requirements:
 
 \begin{table}[htpb]
-  \caption[Automated EAD requirements derived from literature approaches]{Automated EAD requirements derived from literature approaches}\label{tab:sample}
+  \caption[Automated EAD requirements derived from literature approaches]{Automated EAD requirements derived from literature approaches}\label{tab:literaturerequirements}
   \centering
   \begin{tabular}{l l l}
     \toprule
@@ -79,26 +80,65 @@ In the previous section the different approaches were presented. These cover var
     \bottomrule
   \end{tabular}
 \end{table}
+%Data granularity
+%Data actuality
+%Data completeness and correctness.
+%Involvement of data owners for the maintenance of imported EA information
 
 \textbf{RL1}: Most of the mentioned works propose the integration of different information sources. The survey conducted by Farwick et al. \hl{Farwick 2013} shows that organizations use different information sources and/or see the information sources as potential EA relevant data sources. The findings are affirmed by the published approaches.
+Regarding the data of the various sources, there are several data aspects that need to be covered. The integration presents the following data challenges:
 
-\textbf{RL2}: Data is retrieved from numerous information sources. The collected information varies in the contained data. Therefore a transformation of the data to the target metamodel is required. This requirement includes several aspects regarding the data collected from the information sources. The data sources use different models. The transformation of the data should convert the model of the source to the target model. Duplicate EA elements or attributes should also be identified and removed from the target model. The various models are also diverse regarding the granularity levels of the models. This is why the target model for the collected data should be dynamic. This means that it has to be able to allow different granularity levels since the different stakeholder may consider the retrieved information as EA relevant. \hl{XXX}
+\begin{table}[htpb]
+  \caption[Data challenges in the integration of different information sources]{Data challenges in the integration of different information sources}\label{tab:data-challenges}
+  \centering
+  \begin{tabular}{l l l}
+    \toprule
+      Id & Challenge & Source\\
+    \midrule
+      DC1 & Data granularity & \hl{XXX}\\
+      DC2 & Data actuality & \hl{XXX}\\
+      DC3 & Data completeness & \hl{XXX}\\
+      DC4 & Data correctness & \hl{XXX}\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\textbf{DC1}: Data granularity describes detail level of information. This challenge affects the mapping of the different model since the granularity and abstraction level of the models is different. If the data too fine-grained it is not relevant stakeholder of EA.
+%T2 en challenges for Automated Enterprise Architecture Documentation
+
+\textbf{DC2}: Data actuality defines how up to date is the information contained in the information source. To ensure the actuality of the data the EA repository requires an detection of changes. The same applies to the different information sources. The changes in the real world need to trigger a maintenance of the EA relevant data.
+%empirial analysis
+%challenges of automated entepris...
+
+\textbf{DC3} and \textbf{DC4}: Data completeness and Data correctness are further quality attributes of the gathered data.They refers to the amount of relevant data  and accuracy covered by the information source.
+
+The above mentioned data challenges lead to an EA model maintenance. As describes by the approaches the underlying model needs to be flexible.
+
+\textbf{RL2}: As mentioned before data is retrieved from numerous information sources. The collected information varies regarding the data content and granularity levels (DC1). Therefore a transformation of the data to the target metamodel is required. 
+%This requirement includes several aspects regarding the data collected from the information sources. The data sources use different models. 
+The transformation of the data should convert the model of the source to the target model. Duplicate EA elements or attributes should also be identified and removed from the target model (DC4). The various models are also diverse regarding the granularity levels of the models (DC1). This is why the target model for the collected data should be dynamic. This means that it has to be able to allow different granularity levels since the different stakeholder may consider the retrieved information as EA relevant. \hl{XXX}
 
 \textbf{RL3}: The business added value of an automated EAD is not considered as enough regarding the return of investment. The initial investment required for an automated EAD is to large and requires too much effort. The data owners of the information sources need to be involved in the process of the information collection and need to maintain the imported EA information. This is also seen as a challenge according to the survey conducted by Hauder et al. \hl{Hauder Challenges}
 
-\textbf{RL4}: Tool support is also mentioned as a requirement in the related approaches for an automated EAD. The main challenge regarding the tooling aspect is that the majority of the tools does not support an integration of different information sources due to the lack of an public API. Therefore, Iteraplan is used in most of the approaches as the EA Tool since it offers a public API to integrate various data sources. \hl{tool survey} Another problem regaring the EA Tools is the absence of customizing visualizations for analyzing the collected data. \hl{tool survey, hauder challenges} 
+\textbf{RL4}: Tool support is also mentioned as a requirement in the related approaches for an automated EAD. The main challenge regarding the tooling aspect is that the majority of the tools does not support an integration of different information sources due to the lack of a public API. Therefore, Iteraplan is used in most of the approaches as the EA Tool since it offers a public API to integrate various data sources. \hl{tool survey} Another problem regaring the EA Tools is the absence of customizing visualizations for analyzing the collected data. \hl{tool survey, hauder challenges, die approaches mit iteraplan} 
 
-\textbf{RL5}: Cloud infrastructures are emerging in many organizations. According to that the integration of cloud environments need to be coupled to EAM. The cloud support an enterprise in many ways. Enterprises can host the applications in a public or a private cloud and these also vary in the service offering. Cloud can be contracted as IaaS, PaaS and/or SaaS. Similar to traditional EA relevant information sources these options of cloud need to be documented. Some of the approaches have proposed an installation of agents \hl{Landthaler, Farwick} in the underlying infrastructure to retrieve information from installed applications. Considering the usage of PaaS and SaaS as a cloud infrastructure the generic cloud API can make the installation of these agents obsolete. Another advantage of cloud infrastructure is that it also offers the possibility to integrate runtime information of the applications which leads to the next requirement: R6 - Integration of runtime KPIs.
+\textbf{RL5}: Cloud infrastructures are emerging in many organizations. 
+%Bogner 
+According to that the integration of cloud environments need to be coupled to EAM. %Farwick,
+Cloud environments supports an enterprise in many ways. Enterprises can host the applications in a public or a private cloud and these also vary in the service offering. Cloud can be contracted as IaaS, PaaS and/or SaaS. Similar to traditional EA relevant information sources these options of cloud need to be documented. The integration of different cloud environments present the same data challenges as mentioned in table~\ref{tab:data-challenges}. Some of the approaches have proposed an installation of agents \hl{Landthaler, Farwick} in the underlying infrastructure to retrieve information from installed applications. Considering the usage of PaaS and SaaS as a cloud infrastructure the generic cloud API can make the installation of these agents obsolete.
+%Farwick
+Another advantage of cloud infrastructure is that it also offers the possibility to integrate runtime information of the applications which leads to the next requirement: R6 - Integration of runtime KPIs.
 
-\textbf{RL6}: The integration of runtime KPIs is also named in literature. \hl{Farwick, Frank} As already mentioned, enhancing EA models with KPIs can improve the analysis of EAM. An integration of runtime KPIs can therefore be derived from literature.
-
+\textbf{RL6}: The integration of runtime KPIs is also proposed in the approaches found during the literature reasearch. \hl{Farwick, Frank}
+%As already mentioned, enhancing EA models with KPIs can improve the analysis of EAM. 
+% An integration of runtime KPIs can therefore be derived from literature. 
+An enhancement of runtime KPIs improves the actuality of the collected data (DC2). In also increases the data completeness and correctness. \hl{Challenges for EAD, frank, farwick}
 
 \section{Summary}
 
 This section will give an overview of the topics covered by the different approaches presented in literature. 
 
 \begin{table}[htpb]
-  \caption[Topics covered by the literature approaches]{Topics covered by the literature approaches}\label{tab:sample}
+  \caption[Topics covered by the literature approaches]{Topics covered by the literature approaches}\label{tab:literature-summary}
   \centering
   \begin{tabular}{l l l l l}
     \toprule
@@ -119,6 +159,6 @@ This section will give an overview of the topics covered by the different approa
   \end{tabular}
 \end{table}
 
-Table \hl{3.2} shows that current research endeavours lack in integrating cloud aspects (PaaS and SaaS) with its respecting structures such as microservices for automated EA documentation.\hl{Buschle 2012} Also agile methodologies and continuous delivery and integration are not taking into consideration when it comes to the automation of the EAD. New approaches can be derived from the topics that are not covered and the requirements devired from the already existing approaches.
+Table~\ref{tab:literature-summary} shows that current research endeavours lack in integrating cloud aspects (PaaS and SaaS) with its respecting structures such as microservices for automated EA documentation.\hl{Buschle 2012} Also agile methodologies and continuous delivery and integration are not taken into consideration when it comes to the automation of the EAD. New approaches can be derived from the topics that are not covered and the requirements derived from the already existing approaches.
 
 
