@@ -3,6 +3,20 @@
 
 \chapter{Limitations}\label{chapter:conclusion}
 
-\section{Summary}
+This chapter describes the limitations emerged during this work.
 
-\section{Future work}
+\section{Technical challenges}
+During the establishment of the prototype in the enterprise analyzed during the case study some technical challenges prevented an easy integration.
+
+%Web-browser does not support ECMAScript 6
+The first challenge was the web browser used in the company did not support ECMAScript 6. The visualizations implemented in the web component needed to be adapted to plain javascript.
+
+%Server component adaptation for MySQL database component
+The server component also needed some adaptations since the actual prototype uses a Nodejs server connected to a MongoDB database. This database was not supported by the enterprise so the server was adapted to be connected to a MySQL database. 
+
+\section{Governance challenges}
+After solving the technical challenges some governance challenges emerged that avoided a full cloud discovery. 
+
+To accomplish a full discovery of the cloud environment and thus enable an EA documentation of the infrastructure, access rights to the whole environment needs to be guaranteed. This was not ensured therefore a complete discovery and EA documentation of the cloud infrastructure could not be fulfilled.
+
+The integration of a pipeline script to enable an automated EAD of a new developed application was not tested in a pilot project due to time and governance constraints.

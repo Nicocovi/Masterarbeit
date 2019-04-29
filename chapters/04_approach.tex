@@ -2,7 +2,7 @@
 
 This chapter will propose a new automated process for EAD derived from the lack of integrating cloud infrastructure for automated EA documentation in the context of agile methodologies and continuous delivery and integration. The proposed approach was derived from the topics that are not covered and the requirements derived from the already existing approaches in section~\ref{chapter:relatedwork}.
 
-The first section~\ref{section:solution-architecture} will give an overview of the solution architecture. The second section~\ref{section:approach-ead} will describe how to automate the EAD from the application development pipeline and what requirements need to be fulfilled. The last section~\ref{section:approach-usage-scenario} will describe the process more in detail showing the approach in a sample scenario with common tools.
+The first section~\ref{section:solution-architecture} will give an overview of the solution architecture. The second section~\ref{section:approach-ead} will describe how to automate the EAD from the application development pipeline and what requirements need to be fulfilled. The last section~\ref{section:approach-usage-scenario} will describe the process in more detail showing the approach in a sample scenario with common tools.
 
 %How  to  assign  the  application  landscape  to  business  domains?
 %How  to  obtain  EA  relevant  information  from  the  runtime  behaviour  of cloud-based environments?
@@ -23,7 +23,7 @@ The components that are content of this work are:
     \item A EA Tool
 \end{itemize}
 
-%bild mit tools. (generel)
+
 \begin{figure}[htpb]
   \centering
   \includegraphics[width=1.0\textwidth]{figures/solution-architecture-general.PNG}
@@ -31,13 +31,16 @@ The components that are content of this work are:
   \label{fig:solution-architecture-general}
 \end{figure}
 
-The prototypical implementation for for this approach is illustrated in figure~\ref{fig:solution-architecture-general} as "Automated EAD Tool". It is integrated as a middle layer to aggregate the information of the components mentioned above since many of the existing EA Tools require a lot of effort to integrate different information sources. An adaption of the EA metamodel within the EA tool is still an intensive process. Therefore the automated EAD tool as  a middlelayer is useful to aggregate the different collected content.
+The prototypical implementation for this approach is illustrated in figure~\ref{fig:solution-architecture-general} as "Automated EAD Tool". It is integrated as a middle layer to aggregate the information of the components mentioned above since many of the existing EA Tools require a lot of effort to integrate different information sources. An adaption of the EA metamodel within the EA tool is still an intensive process. Therefore the automated EAD tool as a middle-layer is useful to aggregate the different collected content.
 
-The main reason for an integration of a PPM Tool is to enable the assignment of the application landscape to the business domains asked in \textbf{RQ1}. The PPM tool maintain and ensure the business-specific information like business domains, subdomains and product assignments to aggregate the information to the application. The Product Owner should ensure that the project of the PPM tool contains this information. The involvement of data owners is needed to ensure a complete EAD. Therefore the product owner should have the responsibility to maintenance this EA relevant information.
+The main reason for an integration of a PPM Tool is to enable the assignment of the application landscape to the business domains asked in \textbf{RQ1}. As a requirement for the assignment process, the product owner and the agile teams need to ensure that the business information like business domains, business subdomains and product assignments are specified in the PPM tool.
+A possibility to establish these assignments in agile development methodologies is to encourage the agile teams and their product owners to incorporate the business information in their projects.
+There are several ways to include the business information in a project. However, adding the information to the demands of the project seems effective. The responsible person in agile teams to manage the requirements is the product owner.
+For that reason the product owner should control that the business domains, business subdomains and product assignments are maintained and updated in the demands of the projects. This information can then be aggregated to the information of the developed application. The aggregation is done during the automated documentation process.
 
 To obtain EA relevant information from the runtime-behavior (\textbf{RL6}) of cloud-based environments asked in \textbf{RQ2} an integration of the cloud infrastructure is required (\textbf{RL5}). The goal of the integration of the cloud infrastructure is to identify how to obtain runtime information of applications running in a cloud-based environments and what information is relevant for EAM. 
 
-CD/CI Tools and VCS can automate build and deployment processes. As described by Chen et al. and by Drews et al. DevOps teams do not document small changes in the application development pipeline. Thus a documentation process can be integrated in the pipeline with no effort to automate the EAD and improve the data quality attributes mentioned in table~\ref{tab:data-challenges} Therefore an integration of the application development pipeline and the according tools are content of this work to automate the documentation and assignment process.
+CD/CI Tools and VCS can automate build and deployment processes. As described by Chen et al. \cite{Chen2015} and by Drews et al. \cite{Drews2017} DevOps teams do not document small changes in the application development pipeline. Thus a documentation process can be integrated in the pipeline with no effort to automate the EAD and improve the data quality attributes mentioned in table~\ref{tab:data-challenges} Therefore an integration of the application development pipeline and the according tools are content of this work to automate the documentation and assignment process.
 
 The proposed solution is structured in two main parts:
 \begin{itemize}
@@ -68,7 +71,7 @@ Figure~\ref{fig:application-development-process} shows the application developme
 
 \subsection{Requirements}\label{subsection:requirements}
 
-To enable an automated documentation the fulfillment of the following requirements is needed:
+To enable an automated documentation the fulfillment of the following requirements are needed:
 
 \begin{itemize}
     \item A \textbf{predefined project structure} in the PPM tool
@@ -85,7 +88,7 @@ A predefined project structure in the PPM tool and the fulfillment of the projec
 %agile and eam -> more dynamic eam. 
 %structure attributes. domain, subdomain, product
 %
-The proposed structure for a project of this work is that every project should be at the same level as an application. Figure~\ref{fig:project-structure-mapping} shows proposed project structure and the alignment with archimate definitions.
+The proposed structure for a project of this work is that every project should be at the same level as an application. Figure~\ref{fig:project-structure-mapping} shows proposed project structure and the alignment with Archimate definitions.
 
 \begin{figure}[htpb]
   \centering
@@ -94,9 +97,9 @@ The proposed structure for a project of this work is that every project should b
   \label{fig:project-structure-mapping}
 \end{figure}
 
-The definition of an application component according to the archimate standard is: "An application component is defined as a modular, deployable, and replaceable part of a software system that encapsulates its behavior and data and exposes these through a set of interfaces." \hl{Archimate}
+The definition of an application component according to the Archimate standard is: "An application component is defined as a modular, deployable, and replaceable part of a software system that encapsulates its behavior and data and exposes these through a set of interfaces." \cite{vanderMerwe2013}
 
-Since the archimate definition do not cover a definition for a parent application and a child application, the project has to be aligned to a parent application component. This application component as illustrated in figure~\ref{fig:project-structure-mapping} contains different application components. Each project requirement should be assigned to the children application components. Depending on the selected PPM tool, the business specific information can be stored at the project level or at the requirements level. In this approach the business information of the PPM tool is added at the requirements level. Each requirement should be assigned to a business domains and to a subdomain. The product information also stored at the requirements level corresponds to the parent application component. 
+Since the Archimate definition do not cover a definition for a parent application and a child application, the project has to be aligned to a parent application component. This application component as illustrated in figure~\ref{fig:project-structure-mapping} contains different application components. Each project requirement should be assigned to the children application components. Depending on the selected PPM tool, the business specific information can be stored at the project level or at the requirements level. In this approach the business information of the PPM tool is added at the requirements level. Each requirement should be assigned to a business domain and if applicable also to a subdomain. The product information also stored at the requirements level corresponds to the parent application component. 
 %The reason for storing the information at the requirements level is because the parent application can be used by different domains. 
 The application owner would be mapped to the project owner in the PPM tool.
 
@@ -109,7 +112,7 @@ The addition of a configuration file in the repository has different functionali
 
 A continuous delivery pipeline enables automation of the build and deployment pipeline and thus a documentation process can be integrated in the pipeline with no effort to enable the automation of EAD due to the reason that DevOps teams do not document minor changes. 
 %Chen, Balalaie
-In this manner the data quality attributes mentioned in table~\ref{tab:data-challenges} are automatically improved and documented. A manual separated documentation process is no longer necessary. Therefore the application development pipeline should integrate the documentation process within the continuous delivery pipeline. The idea is to include a similar mandatory script for each repository that enables the standardization of build, deployment and documentation process for every application. The intention of the script is that with small manual effort the DevOps team adapts the script. The adaptation of the script involves mainly the adjustments of authorization credentials. The script describes the flow of an artifact through different stages of the application pipeline. \hl{Hansen und Hacks 60-72}
+In this manner the data quality attributes mentioned in table~\ref{tab:data-challenges} are automatically improved and documented. A manual separated documentation process is no longer necessary. Therefore the application development pipeline should integrate the documentation process within the continuous delivery pipeline. The idea is to include a similar mandatory script for each repository that enables the standardization of build, deployment and documentation process for every application. The intention of the script is that with small manual effort the DevOps team adapts the script. The adaptation of the script involves mainly the adjustments of authorization credentials. The script describes the flow of an artifact through different stages of the application pipeline. \cite{Nicolaescu2017}
 
 \subsection{Process description}\label{subsection:processdescription}
 
@@ -120,26 +123,26 @@ The application development pipeline starts with the planning of a new software 
 
 When developing a new product/application the DevOps team must meet the two other requirements. The version control repository has to contain the configuration file with the link to the PPM tool and if possible other tools containing information about the product such as a wiki page for the product. The second requirements is that the pipeline script is included in the repository. 
 This approach purposes a separate repository for each child application component. 
-A deployment of the parent artifact is not needed because the deployment is usually separated into the deployment of small structures that communicate with other small structures. The automated documentation process of this approach is therefore included into the deployment of each application component. \hl{Bogner} 
+A deployment of the parent artifact is not needed because the deployment is usually separated into the deployment of small structures that communicate with other small structures. The automated documentation process of this approach is therefore included into the deployment of each application component. \cite{Bogner2016}
 %This approach documents Since the approach is about documenting applications running on cloud-based environments,  and thus a building process for a parent application component 
-Decomposing an application into small structures like microservices and the development process of these lead to a quicker process of delivery to the customer to reduce the cycle time and release risks. \hl{Chen} Increasing the release frequency also leads to an accelerated time to market.\hl{Chen} Therefore the CD/CI tool starts the build process from the pipeline script included in the repository of the small structures.
+Decomposing an application into small structures like microservices and the development process of these lead to a quicker process of delivery to the customer to reduce the cycle time and release risks. \cite{Chen2017} Increasing the release frequency also leads to an accelerated time to market. \cite{Chen2017}\cite{Chen2015b} Therefore the CD/CI tool starts the build process from the pipeline script included in the repository of the small structures.
 Before building the artifact the pipeline script verifies that the configuration file is included into the repository and retrieves the business information for the specified application.
 
-The tool should also include the deployment process because deployment failures rarely happen and this can be easy automated  within the pipeline script. \hl{Chen}
+Deployment failures rarely happen therefore the deployment process can be easy automated within the pipeline script. \cite{Chen2017}
 
-After the successfull deployment the pipeline script makes a call to the cloud infrastructure API to verify that the application is successfully running and to retrieve the runtime-behavior of the application.
+After the successfull deployment the pipeline script makes a call to the cloud infrastructure API to verify that the application is successfully running and to retrieve the runtime-behavior of the application. The API call depends on the cloud infrastructure API. In this case the call is done via the name of the application to retrieve the runtime information.
 
-As acknowledged by the survey conducted by Farwick et al. \hl{Farwick 2013} manual events can trigger an update of the documentation process. The build and deployment process can be used as triggers. Therefore the application development pipeline is used to trigger an automated EAD. \hl{Hansen und Hacks 60-72}. The documentation process pushes an aggregation of the collected EA information during the application pipeline to the automated EAD tool. This aggregation contains the business information from the PPM tool and the runtime-behavior of the application. The EAD tool contains a schemaless database with a REST API to facilitate the documentation. 
+As acknowledged by the survey conducted by Farwick et al. \cite{Farwick2013} manual events can trigger an update of the documentation process. The build and deployment process can be used as triggers. Therefore the application development pipeline is used to trigger an automated EAD. \cite{Nicolaescu2017} The documentation process pushes an aggregation of the collected EA information during the application pipeline to the automated EAD tool. This aggregation contains the business information from the PPM tool and the runtime-behavior of the application. The EAD tool contains a schemaless database with a REST API to facilitate the documentation. 
 
 To update the runtime information of the applications running on cloud-based environments another process was defined in the CD/CI tool. The process is responsible for crawling the cloud infrastructure every certain time collecting and updating the runtime information in the automated EAD tool.
 
-An uptodate EA information of cloud applications can be ensured and the manual effort for documentation processes can be eliminated. The inconsistency and redundancy of EA information retrieved from the cloud infrastructure can be removed through this process.
+An up-to-date EA information of cloud applications can be ensured and the manual effort for documentation processes can be eliminated. The inconsistency and redundancy of EA information retrieved from the cloud infrastructure can be removed through this process.
 % because the documentation is always updated elimintating inconsistency and redundancy is not allowed t 
-DevOps teams do not document smaller changes of an application in the EA tool. However, this process integrates the data from the DevOps toolchain automatically. Similar approaches call an are called "self-reporting architecture". \hl{Drews 2017}
+DevOps teams do not document smaller changes of an application in the EA tool. However, this continuously documentation process integrates the data sources used within the DevOps toolchain automatically. Similar documentation approaches are called "self-reporting architecture". \cite{Drews2017}
 
-The enteprise architect has the possibility to continuously monitor applications. It enables the detection of operational anomalies and performance related issues.\hl{Armin Balalaie and Abbas Heydarnoori} During the analyze and evaluation phase the enterprise architect can identify potential improvements from the monitored data. Afterwards, the enterprise architect executes the planned improvements while the IT Governance controls the fulfillment of policies and methods to ensure the alignment of the IT and the business goals. Based on that the IT Governance is also responsible for the management and monitoring of risks of IT resources.\hl{Meyer 2003}
+The enterprise architect has the possibility to continuously monitor applications. It enables the detection of operational anomalies and performance related issues. \cite{Balalaie2016} During the analyze and evaluation phase the enterprise architect can identify potential improvements from the monitored data. Afterwards, the enterprise architect executes the planned improvements while the IT Governance controls the fulfillment of policies and methods to ensure the alignment of the IT and the business goals. Based on that the IT Governance is also responsible for the management and monitoring of risks of IT resources. \cite{Meyer2003} 
 
-Depending on the EA tool in place an export from the automated EAD tool to the EA tool is possible. A mapping between both tools is still needed. Once the mapping is implemented, the enterprise architect can verify the quality and consistency of the exported data in the EA tool. Since the automated EAD tool is only a middlelayer to aggregate information of different information sources the stakeholder will still take the decisions from the reportings and KPIs in the EA tool.
+Depending on the EA tool in place an export from the automated EAD tool to the EA tool is possible. A mapping between both tools is still needed. Once the mapping is implemented, the enterprise architect can verify the quality and consistency of the exported data in the EA tool. Since the automated EAD tool is only a middle-layer to aggregate information of different information sources the stakeholder will still take the decisions from the reportings and KPIs in the EA tool.
 
 \section{Approach in usage scenario}\label{section:approach-usage-scenario}
 
@@ -151,9 +154,9 @@ The following tools were used to test the conceptual approach of an automated do
 \begin{itemize}
     \item The version control service Github is used as a web-based hosting for the code repositories.
     \item The open source automation server Jenkins is used to automate the application development process as a continuous integration and continuous delivery tool.
-    \item To manage projects the Atlassian tool Jira is used. The tool enables an efficient Requirements Management for the project. \hl{Filion}
+    \item To manage projects the Atlassian tool Jira is used. The tool enables an efficient Requirements Management for the project. \cite{Filion2017}
     \item The cloud infrastructure is enabled by the usage of the open source, multi-cloud application platform CloudFoundry.
-    \item The existing open-source project Pivio is used as an automated EAD tool. The project is explained in detail in chapter~\ref{chapter:prototype implementation}
+    \item The existing open-source project Pivio is used as an automated EAD tool. The project is explained in detail in chapter~\ref{chapter:prototype implementation}.
     \item The EA tool Iteraplan is used to test the approach. A lite version fo Iteraplan is available as a docker image. Iteraplan also allows the integration of other repositories through a public API.
 \end{itemize}
 
@@ -170,7 +173,7 @@ The definitions and components of the different tools selected for this approach
 
 For the application development process sample Springboot applications were developed in different repositories and the communication between these applications was implemented.
 
-An example for the configuration file and the pipeline written in Groovy can be found in the appendix~\ref{chapter:appendix}
+%An example for the configuration file and the pipeline written in Groovy\footnote{\url{http://groovy-lang.org/}} can be found in the appendix~\ref{chapter:appendix}.
 
 \subsection{Scenario process description}\label{subsection:scenarioprocessdescription}
 
@@ -224,27 +227,26 @@ Once the service was successfully deployed to the cloud the runtime information 
 The runtime information that can be gathered from the API may vary depending on the cloud infrastructure.
 
 \subsubsection{Push Documentation}
-During the pipeline the collected information of the individual stages are put in the same global variable of the script. The export of this variable is formatted as a json. As shown in the above picture the json contains the information of the configuration file, the business-specific information and the runtime information. This json is pushed to the tool with a simple HTTP-POST-Method.
+During the pipeline execution the collected information of the individual stages are put in the same global variable of the script. The export of this variable is formatted as a json. As shown in the above picture the json contains the information of the configuration file, the business-specific information and the runtime information. This json is pushed to the tool with a simple HTTP-POST-Method.
 
-\subsubsection{Cloud Crawler}
-To updated the EA relevant information retrieved during the process, a crawler was implemented in the continuous delivery tool.The information update is depicted in figure \hl{XXX} as \textbf{Cloud Crawler}. The cloud crawler is a job in the CD tool that retrieves the runtime information of the cloud-based environment and updates the information in the \hl{solution tool}. The crawler job is divided in four stages. The following figure shows the cloud crawler job.
+\subsubsection{Cloud Crawler}\label{subsubsection:cloudcrawler}
+To updated the EA relevant information retrieved during the process, a crawler was implemented in the continuous delivery tool. The job that triggers an information update is depicted as \textbf{Cloud Crawler}. The cloud crawler is a job in the CD tool that retrieves the runtime information of the cloud-based environment and updates the information in the tool. The crawler job is divided in four stages. The following figure shows the cloud crawler job.
 
 %bild von cloud crawler
 
-\subsubsection{Get Pivio-App}
+\subsubsection{Get Automated-EAD-Tool-App}
 
-In this stage the job first retrieves a list of all artifacts listed in Pivio. 
+In this stage the job first retrieves a list of all artifacts listed in the Automated-EAD-Tool. 
 
-Get Apps-List: 
-In this stage the job gets a list of the artifacts that are hosted in the specified organization and space of the platform. This artifacts can be either running, stopped or crashed. Independently of the status of the service the platform API endpoint will return a complete list of the services.
-
-%Erklärung warum liste aus tool und cloud
+\subsubsection{Get Apps-List} 
+During this stage the job gets a list of the artifacts that are hosted in the specified organization and space of the platform. This artifacts can be either running, stopped or crashed. Independently of the status of the service the platform API endpoint will return a complete list of the services.
 
 \subsubsection{Get individual Runtime Info}
 Subsequently getting the list of all artifacts of the organization and space of the platform, this stage collects the individual runtime information. This stage iterates through the list of artifacts to retrieve the individual information of the them on the platform. The runtime information contains the attributes described in "Get Runtime Information". This is the most time consuming stage of the crawler job since the job has to retrieve the individual runtime information for each artifact.
 
 \subsubsection{Push Documentation}
-Ultimately the retrieved information of the individual services is pushed to Pivio to update the information of the already documented artifact to ensure an uptodate documentation.
+Ultimately the retrieved information of the individual services is pushed to the Automated-EAD-Tool to update the information of the already documented artifact to ensure an uptodate documentation.
 The job is scheduled time-based. In the jenkins instance the crawler job is performed every 15 minutes.
+
 %eampc: priorisierung von migrationen.
 %eampc: aggregated architecture of enteprise oder cloud applikationen

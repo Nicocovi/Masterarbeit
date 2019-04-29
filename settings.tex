@@ -8,7 +8,8 @@
 \usepackage[%
   backend=biber,
   url=false,
-  style=alphabetic,
+  style=numeric, % alphabetic, numeric
+  sorting=nty, % default == nty,
   maxnames=4,
   minnames=3,
   maxbibnames=99,
@@ -35,8 +36,9 @@
 \usepackage{ifthen}% used for \Qitem and \QItem
 \usepackage{typearea}
 
-\usepackage{comment}
 
+\usepackage{comment}
+\usepackage{pgfplots}
 
 \bibliography{bibliography}
 

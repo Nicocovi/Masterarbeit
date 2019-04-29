@@ -3,6 +3,38 @@
 
 \chapter{Conclusion}\label{chapter:Conclusion}
 
-\section{...}
+This final chapter of this work presents the summary of this thesis and gives an outlook for further work.
 
-% Übertragbarkeit auf andere Unternehmen
+\section{Summary}
+
+This section presents the results for the research questions introduced in section~\ref{section:researchquestions}.
+
+\textbf{RQ1. How to obtain EA relevant information from the runtime behavior of cloud based environments?}
+Most cloud infrastructures provide runtime information without the installation of additional monitoring agents. Thus, Shadow IT is prevented. However installing additional monitoring agents unveil further information like the total amount of API requests.  
+
+\textbf{RQ2. How to assign the application landscape to business domains?}
+To enable the assignment of the application landscape to the business domains there are two possibilities. The first one is to add the business specific information to a configuration file so the information of the configuration file is used for the assignment. The developers have to manually maintain the configuration file. The second possibility is to integrate the PPM tool in the Build-Deployment pipeline. For this possibility the PPM tool needs to provide the business domain information. This also has to be maintained manually by the developers or the product owners using the PPM tool.
+
+\textbf{RQ3. How to automate the assignment process with an integrated toolchain?}
+The automation of the assignment process can be achieved through a configuration file which contains the links to the relevant tools or through name mapping. The usage of the configuration file results in producing further overhead. Therefore the mapping via name is more popular, however the names need to be stable and unique.
+
+\textbf{RQ4. How does a prototype implementation of the automated documentation process of cloud applications look like?}
+The prototype implementation of the automated documentation process of cloud applications is explained and illustrated in chapter~\ref{chapter:prototype implementation}.
+
+\section{Future work}
+
+This section presents the possible extensions of the prototype that were not implemented due to time constraints. The future use cases were demanded by the industry partners during the evaluation.
+
+The first additional implementation is to include other cloud environments to enable the transferability to other companies.
+
+During this work the PPM tool was integrated during the build and deployment pipeline to include the business domain information. An further extension would be to include a mapping of business processes and capabilities for an Business Impact Analysis of the applications.
+
+During the evaluation two new code related use cases were requested by the experts. The first use case was the automated verification of the cloud readiness of an application by verifying the 12 factor app criteria. The other use cases was an automated elasticity evaluation through a complete implementation of resilience pattern. To improve both automated verifications an integration a continuous inspection tool to perform automatic reviews with static code analysis would enhance both use cases. A possible tool for this could be Sonarqube\footnote{\url{https://www.sonarqube.org/}}. 
+
+Another requested extension of the prototype is to include an automated Data privacy compliance (GDPR compliance) analysis. Knowing what applications actually store information enables the opportunity to analyze the data that is stored.
+
+To prove that the approach and prototype can automate the EAD of enterprises, access rights to the whole cloud infrastructure needs to be guaranteed and the concept needs to be tested in several pilot projects.
+
+%Solution architecture
+%Bild von finale präsi, github
+

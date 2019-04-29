@@ -4,32 +4,37 @@
 \chapter{Prototype implementation}\label{chapter:prototype implementation}
 
 %Link to RQ4.
-This chapter will introduce a prototypical implementation of a tool to cover the automated EAD process presented in chapter~\ref{chapter:approach}. To cover the requirements of the literature an existing open-source project \textbf{Pivio} was further developed to cover the presented requirements in subsection~\ref{subsection:derivationofrequirements}. \hl{Pivio}
+This chapter will introduce a prototypical implementation of a tool to cover the automated EAD process presented in chapter~\ref{chapter:approach}.An existing open-source project \textbf{Pivio}\footnote{\url{http://pivio.io/}} was further developed to cover the presented requirements in subsection~\ref{subsection:derivationofrequirements}.
 
 \section{Motivation} 
-
-Based on the findings during the literature research the implementation of a prototypical solution needs to covers  the technology trends that influence nowadays the EA documentation. Furthermore the prototypical solution requires an intergration of aspects such as agile development, cloud aspects and decomposition of legacy systems into application components or microservices. Concurrently with the literature review the existing open-source project Pivio was found that focuses on service discovery. This project was adapted and further developed to align it with the presented approach in section~\ref{chapter:approach}.
+Based on the findings during the literature research the implementation of a prototypical solution needs to cover the technology trends that influence nowadays the EA documentation. Furthermore the prototypical solution requires an integration of agile development methodologies, cloud infrastructures and microservices. Concurrently with the literature review the existing open-source project Pivio was found. It mainly focuses on service documentation. %discovery. 
+This project was adapted and further developed to align it with the presented approach in section~\ref{chapter:approach}.
 
 %Why Pivio?
-\subsubsection{Pivio}
-Pivio is a service registry. The main purpose of the project is to retrieve metadata of the deployed service. The information collected can be the name, owner and VCS information including runtime environment data and service dependencies.
+\subsubsection{Pivio}\label{subsubsection:pivio}
+Pivio is a service registry. The main purpose of the project is to retrieve metadata of the deployed services. This metadata includes the name, owner and VCS information including runtime environment data and service dependencies.
 
-Figure~\ref{fig:pivio-highlevel} shows the high level architecture of Pivio. The two main parts used in this approach of Pivio are:
+Figure~\ref{fig:pivio-highlevel} shows the high level architecture of the tool. The three main components used in this approach are:
 \begin{itemize}
-    \item Pivio web: A Webview
-    \item Pivio server: A simple REST API connected to a schemaless database
+    \item The web component which acts as a webview
+    \item The server component: A simple REST API 
+    \item A database component connected to the server
 \end{itemize}
 
-The original open-source project was used as a solution for microservice discovery. During this work the project was extended to document an application during the application development pipeline and maintain this information.
+The original open-source project was used as a solution for microservice discovery. During this work the project was extended to document an application during the application development pipeline and to maintain and update this information.
 
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=0.5\textwidth]{figures/pivio-highlevel.PNG}
-  \caption{High level architecture of Pivio}
+  \includegraphics[width=1.0\textwidth]{figures/pivio-highlevel2.PNG}
+  \caption{High level architecture of the prototype}
   \label{fig:pivio-highlevel}
 \end{figure}
 
 %Technical requirements?
+\section{Technical specification}
+The web component was implemented as a Springboot\footnote{\url{https://spring.io/}} application with the integration of the Thymeleaf\footnote{\url{https://www.thymeleaf.org/}} framework as a view layer for MVC-based applications. In addition to that the D3.js\footnote{\url{https://d3js.org/}} library was included to enable the possibility to produce dynamic, interactive data visualizations in the web component.
+
+The server component was originally implemented as a Springboot application with ElasticSearch\footnote{\url{https://www.elastic.co/}} as the database component. During this thesis the server component was changed to a Node.js\footnote{\url{https://nodejs.org}} application with a MongoDB\footnote{\url{https://www.mongodb.com/}} database due to maintenance reasons.
 
 \section{Main views} 
 This section will introduce the main views of the tool. The tool has three core views. The first view will be explained in subsection~\ref{subsection:overview}. It contains an overview of all artifacts that were documented according to the approach in chapter~\ref{chapter:approach}. The second view in subsection~\ref{subsection:detailedview} illustrates a detailed view of an artifact. The last view in subsection ~\ref{subsection:visualizations} shows different visualizations of the documented artifacts.
@@ -44,8 +49,9 @@ The status is depicted as a red or green circle. Red circles represents that the
 
 \subsubsection{Filter tree}\label{subsubsection:filtertree}
 
-The filter tree was also implemented during this work. The main reason to add a filter functionality to the overview page was that more and more enterprises are moving their infrastructure to the cloud and therefore the amount of artifacts running on cloud environments has increased significantly.\hl{ Cloud Computing Survey. 2016}
-An average enterprise has more than 900 artifacts hosted in a cloud infrastructure. \hl{Odun-Ayo} Therefore the implementation of a filter functionality in the overview page is seen as useful.
+The filter tree was also implemented during this work. The main reason to add a filter functionality to the overview page was that more and more enterprises are moving their infrastructure to the cloud and therefore the amount of artifacts running on cloud environments has increased significantly. \cite{Badger2012}
+
+An average enterprise has more than 900 artifacts hosted in a cloud infrastructure. \cite{IsaacOdun-AyoFrankAgono2018} Therefore the implementation of a filter functionality in the overview page is seen as useful.
 
 The filter contains the metadata of every artifact. The metadata includes several properties of the artifacts such as the name, the short name, the status, the description, the changes (last upload and last update), the domain, the subdomain, the product, the owner and the links to other tools. The filer functionality depicted as "Quick Search..." enables a search through all the metadata properties mentioned before.
 A hierarchical tree was included as a visualization to enable an overview of artifacts per different areas. The hierarchical tree is structured in the following form: Cloud environment, domains, subdomains, products, artifacts belonging to the product and links to other tools. An example of the hierarchical view can be seen in figure~\ref{fig:pivio-overview-filtertree}. Clicking on a node expands or collapses the tree and updates the search box automatically with the metadata on the node and the list of artifacts gets updated as well.
@@ -89,17 +95,17 @@ This section also contains the last changes of the documentation of the artifact
 
 The runtime information is displayed on a separate section displayed in figure~\ref{fig:pivio-detailedview-general}. This information includes the number of instances of the artifact, the memory used, the CPU consumption and the disk required for the deployment of the artifact. It also includes the host type which means where the artifact is hosted since more than one cloud provider can be used.
 
-In addition to the runtime behavior of the artifact, the running costs are calculated from the resource utilization. In this example the costs are calculated based on the memory per artifact instance. The cloud platform 
+In addition to the runtime behavior of the artifact, the running costs are also displayed. These are calculated from the resource utilization. In this example the costs are calculated based on the memory per artifact instance. The cloud platform 
 Cloudfoundry uses the unit "Gigabyte per hour" (GB-Hr) to calculate application costs. The rate used in this example is 0.03 dollar per GB-Hr. This means running an artifact that consumes 1 GB for 1 hour, the cost will be 0.03 dollar. The memory and duration are two parameters that can vary. This parameters determine the costs of the artifact. More instances increase the costs proportionally.
 
-Additionally, cloud infrastructure resources can be allocated better based on the displayed resource consumption and the running costs of the application. The efficient allocation can lead to a decrease of infrastructure costs.
+In summary, cloud infrastructure resources can be allocated better based on the displayed resource consumption and the running costs of the application. An efficient allocation of IT resources can lead to a decrease of infrastructure costs.
 
 \subsubsection{Metrics monitoring section}
 
-More use cases can be derived from monitoring and analyzing applications and their KPIs. \hl{Tilmann Rabl 2012} This is the reason why a section containing KPIs was added to the detailed view of an artifact. The metrics monitoring section is shown in figure ~\ref{fig:pivio-detailedview-general}.
+More use cases can be derived from monitoring and analyzing applications and their KPIs. \cite{Rabl2012} This is the reason why a section containing KPIs was added to the detailed view of an artifact. The metrics monitoring section is shown in figure ~\ref{fig:pivio-detailedview-general}.
 
 The two selected KPIs for this section are the response-time and the number of http-calls of an artifact. The response-time KPI is displayed because it has different meanings. One of them is that a higher response time means an increased waiting time for the user. For that reason it is displayed to show a possible decreased performance of the system.
-The total number of http-calls can be used for decommission purposes. If the artifact has high costs and total the number of call is low the enterprise architect should take measures.
+The total number of http-calls can be used for decommission purposes. If the artifact has high costs and total the number of calls is too low the enterprise architect should take measures.
 
 This section also includes the link to the artifact and links to monitoring agents of the artifact. This agents are used to retrieve extra KPIs which are not covered by the monitoring tools offered by the cloud providers. 
 %Nicht ganz einverstanden: offered through the API of cloud providers?
@@ -112,8 +118,8 @@ The services section contains an overview of the services connected to the artif
 
 \subsubsection{Software dependencies section}\label{subsubsection:softwaredependenciessection}
 
-The software dependency section illustrated in figure~\ref{fig:pivio-detailedview-general} is displayed to show the reliance of the artifact on other software packages. The presence of software dependencies are an important indicator of software complexity. 
-A high degree of dependencies reflects the cohesion and coupling of the shown artifact, which can be seen as a software quality index. \hl{Wang}
+The software dependency section illustrated in figure~\ref{fig:pivio-detailedview-general} shows the reliance of the artifact on other software packages. The presence of software dependencies are an important indicator of software complexity. 
+A high degree of dependencies reflects the cohesion and coupling of the shown artifact, which can be seen as a software quality index. \cite{Wang2013}
 
 
 %JIRA MONITORING SECTION SCREENSHOT
@@ -127,7 +133,7 @@ A high degree of dependencies reflects the cohesion and coupling of the shown ar
 
 This section displayed in figure~\ref{fig:pivio-detailedview-jira} shows the aggregated information of the PPM tool to the artifact. As mentioned in ~\ref{subsection:toolselection} Jira is used to manage projects. 
 
-This section shows the development of the project in regard to the total amount of issues and the amount open issues. A pie chart was added in addition to visualize the progress. As named in ~\ref{subsubsection:getjirainformation} every Jira issue contains a standard field "component". The related components are displayed in this section to display other artifacts that are related to the parent application/product. The difference to the services section~\ref{subsubsection:servicessection} is that the shown artifact is not necessary connected to all services of the project. Other stakeholder like the product owner might have an interest to see all components/services of the project.
+This section shows the development of the project in regard to the total amount of issues and the amount open issues. A pie chart was added in addition to visualize the progress. As named in ~\ref{subsubsection:getjirainformation} every Jira issue contains a standard field "component". The related components are displayed in this section to display other artifacts that are related to the parent application/product. The difference to the services section~\ref{subsubsection:servicessection} is that the shown artifact is not necessary connected to all components of the project. Other stakeholder like the product owner might have an interest to see all components/services of the project.
 
 %GITHUB MONITORING SECTION SCREENSHOT
 \begin{figure}[htpb]
@@ -151,7 +157,7 @@ In combination with the Jira section the stakeholder can see the ongoing procedu
 \end{figure}
 \subsubsection{Jenkins section}
 
-Figure~\ref{fig:pivio-detailedview-jenkins} shows the section containing information of the CD/CI tool. Jenkins is used as the CI tool during this approach. The last build API of Jenkins is used to display information aboout the build deployment. This section contains on the left side the following metrics: the last build number, the duration of the last build, the estimated duration of the build process, the result of the last build, the timestamp and the url to the last build in the tool. On the right side it shows a bar chart comparing the duration of the last build and the estimated duration. The comparison is used to see whether the last build was affected by external factors such as latency or connection issues.
+Figure~\ref{fig:pivio-detailedview-jenkins} shows the section containing information of the CD/CI tool. Jenkins is used as the CI tool during this approach. The last build API of Jenkins is used to display information about the build deployment. This section contains on the left side the following metrics: the last build number, the duration of the last build, the estimated duration of the build process, the result of the last build, the timestamp and the url to the last build in the tool. On the right side it shows a bar chart comparing the duration of the last build and the estimated duration. The comparison is used to see whether the last build was affected by external factors such as latency or connection issues.
 
 %ACTIONS SECTION SCREENSHOT
 \begin{figure}[htpb]
@@ -163,9 +169,9 @@ Figure~\ref{fig:pivio-detailedview-jenkins} shows the section containing informa
 
 The actions section displayed in figure~\ref{fig:pivio-detailedview-actions} includes the manual delete functionality of the artifact. Further functionality can be added in this section such as an update function for a manual information update to include additional data.
 
-\subsection{Visualizations}\label{subsection:visualizations}
+\subsection{Visualizations View}\label{subsection:visualizations}
 
-Another essential view of this tool is the visualizations view. The view was implemented during this thesis using the d3.js library for producing dynamic, interactive data visualizations in the web component.\hl{d3.js} The visualizations view is divided into two diagrams. The first diagram is a combination of a hierarchical edge bundling diagram and a sunburst diagram. The second visualizations is an adjacency matrix.
+Another essential view of this tool is the visualizations view. The view was implemented during this thesis using the D3.js\footnote{\url{https://d3js.org/}} library for producing dynamic, interactive data visualizations in the web component. The visualizations view is divided into two diagrams. The first diagram is a combination of a hierarchical edge bundling diagram and a sunburst diagram. The second visualizations is an adjacency matrix.
 
 \subsubsection{Communications and business domain assignment diagram}
 
@@ -207,34 +213,71 @@ By clicking on a cell it is possible to see the domains of the source service  a
   \includegraphics[width=1.0\textwidth]{figures/pivio-visualizations-matrix-cell.PNG}
   \caption{Adjacency matrix cell information box}
   \label{fig:pivio-visualizations-adjacency-matrix-cell}
-\end{figure}
+\end{figure} 
+
 
 \section{Component diagrams}
 
-This section shows two component diagrams of the two main components of the tool: Pivio web and Pivio server.
+This section will first introduce a component diagram to see the communication between the different tools. Then this section shows two main parts of the tool: the web component and the server component.
 
-\subsection{Pivio web}
+\subsection{Components communication}
+Figure~\ref{fig:component-diagram} shows the communication between the major components of this work.
 
-Figure~\ref{fig:pivioweb-component} shows the component UML diagram of the frontend component. The main component of Pivio web is the PivioServerConnector. This component contains the individual calls to the backend component. It uses the component ServerConfiguration to get the current server address. The ServerConfiguration is linked to the application properties file where the links are hold.
+As mentioned in ~\ref{subsubsection:pivio} the Tool consists of three components. The The server component is a simple REST API layer for the database component. The Webview component visualizes the information stored in the database. It is also connected to an Adapter component which collects on runtime the information of the specific artifact being displayed. The Adapter retrieves the information from the PPM Tool, the VCS and the CD/CI Tool.
+The CD/CI Tool runs the crawler job explained in ~\ref{subsubsection:cloudcrawler} to update the runtime information of the artifact. The artifact is hosted in a cloud infrastructure and can is typically a microservice or a container.
 
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=1.0\textwidth]{figures/Pivioweb-ComponentDiagram.PNG}
-  \caption{UML component diagram of Pivio web component}
-  \label{fig:pivioweb-component}
+  \includegraphics[width=1.0\textwidth]{figures/component-diagram.PNG}
+  \caption{Components communication}
+  \label{fig:component-diagram}
+\end{figure} 
+
+
+\subsection{Web component}
+
+Figure~\ref{fig:web-component} shows the UML component diagram of the web component. 
+
+The main part the of web component is the ServerConnector. This component contains the individual calls to the server component. It uses the component ServerConfiguration to get the current server address. The ServerConfiguration is linked to the application properties file where the links are hold.
+
+To retrieve the data for the overview page the ListController forwards a request for getting the data to the ListService component. The ListService gets the data from the ServerConnector and creates an Overview. The Overview is mapped via the ModelMapperComponent to the OverviewModel which is used by the OverviewTemplate for the data visualization.
+
+The same principle is used for the detailed view of an artifact. The DetailController forwards the calls to the DetailService. The DetailService creates a Document with the data gathered from the ServerConnector. The DetailController fills then the DocumentViewModel with the received Document from the DetailService. The DetailviewTemplate uses the data of the DocumentViewModel to visualize an artifact.
+
+A different principle was used for the visualizations. The VisualizationsController delegates the call to the VisualizationsService which gets the data from the ServerConnector. The Controller passes the data directly to the template. No model is used for this template because the data is parsed several times for the individual visualizations within the template.
+
+Similar to the ListController, the ExporterController delegates the calls to the Service which gets the data from the ServerConnector. The Controller exports then the data to the EA Tool in place.
+
+%PPM-Moniroting
+The PPM Monitoring component is an adapter component for the connected PPM tool. It retrieved the business specific information of the tool. In this case Jira was used as a PPM tool. This adapter collect the business domain, the business subdaomain, the product information and the application owner via the API of PPM tool.
+
+%VCSMonitoring
+The VSC Monitoring component is also an adapter for the code repository. It gathers the development information of the repository. This information includes metrics for determining the size and complexity of the code. Metrics like number of contributors, lines of code and a commit activity diagram are displayed in the GUI.
+
+%CDMonitoring
+The CD Monitoring component is collect the information of the last build of the application. Statistics of the last job like build result, duration and estimated duration are used to determine whether the last build was affected by external factors such as latency or connection issues. This adapter can be connected to any CD/CI tool to gather more information.
+
+%GovernanceMonitoring
+The governance monitoring compontent was implemented to monitor other EA relevant criteria for the enterprise. Possible criteria are mentioned in ~\ref{subsubsection:additionalrequirementsazd}.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=1.0\textwidth]{figures/web-componentdiagram.PNG}
+  \caption{UML component diagram of the web component}
+  \label{fig:web-component}
 \end{figure}
 
-\subsection{Pivio server}
+\subsection{Server component}
 
-During this work the server component of Pivio was changed to a node.js application with a MongoDB database. Figure~\ref{fig:pivioserver-component} shows the UML component diagram.
+During this work the server component of open-source project was changed to a node.js application with a MongoDB database. Figure~\ref{fig:server-component} shows the UML server component diagram.
 
-The server component includes the main application component, and a controller, a route and a schema for storing applications into the database. The application component illustrated in figure~\ref{fig:pivioserver-component} as "App" defines the API paths and requires the "applicationRoutes" for forwarding the incoming calls. The "applicationRoutes" maps the implemented CRUD-Methods in the "applicationController" to the respective paths. The "applicationSchema" defines the model for the database and the controller requires it to validate and parse the incoming data. This data is stored in the MongoDB database component. 
+The server component includes the main application component, and a controller, a route and a schema for storing applications into the database. The application component illustrated in figure~\ref{fig:server-component} as "App" defines the API paths and requires the Route component for forwarding the incoming calls. The Route component maps the implemented CRUD-Methods in the Controller component to the respective paths. The Schema component defines the model for the database and the controller requires it to validate and parse the incoming data. This data is stored in the database component. 
 
 \begin{figure}[htpb]
   \centering
-  \includegraphics[width=1.0\textwidth]{figures/pivioserver-componentdiagram.PNG}
-  \caption{UML component diagram of Pivio server component}
-  \label{fig:pivioserver-component}
+  \includegraphics[width=1.0\textwidth]{figures/server-componentdiagram.PNG}
+  \caption{UML component diagram of the server component}
+  \label{fig:server-component}
 \end{figure}
 
 \section{Class diagram}
@@ -242,9 +285,9 @@ The server component includes the main application component, and a controller, 
 The web component retrieves the data from the server component via a REST API. The return of the server is a JSON containing the properties of one service. This JSON response is mapped to the classes shown in figure~\ref{fig:server-response}.
 
 Every response is mapped to a document. A document contains several properties. One of the properties is the information about the runtime. The runtime properties are modeled in a separate class. A document can contain one service which is composed by a list of buildpacks and one-to-many "Provides" objects. The list of buildpacks represents the list of software-dependencies mentioned in ~\ref{subsubsection:softwaredependenciessection}.
-"Provides" objects are also modelled in a separate class. These objects represent the connection another service running on the cloud. The "Provides" class includes the service name, the protocol and the port of the communication.
+"Provides" objects are also modelled in a separate class. One object represents a single connection to another service running on the cloud. The "Provides" class includes the service name, the protocol and the port of the communication.
 
-The tools used during this approach are modeled as properties to facilitate the usage of the links. 
+The tools used during this approach are modeled as properties of a document to facilitate the usage of the links. 
 
 \begin{figure}[htpb]
   \centering
